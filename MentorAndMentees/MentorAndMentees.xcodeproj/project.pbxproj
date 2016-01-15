@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23AA0228838ED7A554543090 /* Pods_MentorAndMentees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA368650A539C2E5FCADA728 /* Pods_MentorAndMentees.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A572585F1C49789C0020B168 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A572585E1C49789C0020B168 /* AppDelegate.swift */; };
 		A57258611C49789C0020B168 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57258601C49789C0020B168 /* ViewController.swift */; };
 		A57258641C49789C0020B168 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57258621C49789C0020B168 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09F42AC60706AD4F8FF5245E /* Pods-MentorAndMentees.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MentorAndMentees.release.xcconfig"; path = "Pods/Target Support Files/Pods-MentorAndMentees/Pods-MentorAndMentees.release.xcconfig"; sourceTree = "<group>"; };
 		A572585B1C49789C0020B168 /* MentorAndMentees.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MentorAndMentees.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A572585E1C49789C0020B168 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A57258601C49789C0020B168 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +49,8 @@
 		A572587A1C49789C0020B168 /* MentorAndMenteesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MentorAndMenteesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A572587E1C49789C0020B168 /* MentorAndMenteesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorAndMenteesUITests.swift; sourceTree = "<group>"; };
 		A57258801C49789C0020B168 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC89D73CC2F74D5AA3419866 /* Pods-MentorAndMentees.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MentorAndMentees.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MentorAndMentees/Pods-MentorAndMentees.debug.xcconfig"; sourceTree = "<group>"; };
+		EA368650A539C2E5FCADA728 /* Pods_MentorAndMentees.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MentorAndMentees.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23AA0228838ED7A554543090 /* Pods_MentorAndMentees.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		77A6F1C031CD0720A8D9F541 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA368650A539C2E5FCADA728 /* Pods_MentorAndMentees.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7D1DADBD730F7DF23D525D5A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DC89D73CC2F74D5AA3419866 /* Pods-MentorAndMentees.debug.xcconfig */,
+				09F42AC60706AD4F8FF5245E /* Pods-MentorAndMentees.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A57258521C49789C0020B168 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +103,8 @@
 				A57258721C49789C0020B168 /* MentorAndMenteesTests */,
 				A572587D1C49789C0020B168 /* MentorAndMenteesUITests */,
 				A572585C1C49789C0020B168 /* Products */,
+				7D1DADBD730F7DF23D525D5A /* Pods */,
+				77A6F1C031CD0720A8D9F541 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A57258831C49789C0020B168 /* Build configuration list for PBXNativeTarget "MentorAndMentees" */;
 			buildPhases = (
+				6C500FBB996BC739E3856AF4 /* Check Pods Manifest.lock */,
 				A57258571C49789C0020B168 /* Sources */,
 				A57258581C49789C0020B168 /* Frameworks */,
 				A57258591C49789C0020B168 /* Resources */,
+				2E8470E3A5BBA2758359437C /* Embed Pods Frameworks */,
+				9CA720B5D6BDBAFE892FC64C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,6 +277,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E8470E3A5BBA2758359437C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MentorAndMentees/Pods-MentorAndMentees-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C500FBB996BC739E3856AF4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9CA720B5D6BDBAFE892FC64C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MentorAndMentees/Pods-MentorAndMentees-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A57258571C49789C0020B168 /* Sources */ = {
@@ -397,6 +472,7 @@
 		};
 		A57258841C49789C0020B168 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC89D73CC2F74D5AA3419866 /* Pods-MentorAndMentees.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MentorAndMentees/Info.plist;
@@ -408,6 +484,7 @@
 		};
 		A57258851C49789C0020B168 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09F42AC60706AD4F8FF5245E /* Pods-MentorAndMentees.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MentorAndMentees/Info.plist;
@@ -484,6 +561,7 @@
 				A57258851C49789C0020B168 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A57258861C49789C0020B168 /* Build configuration list for PBXNativeTarget "MentorAndMenteesTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +570,7 @@
 				A57258881C49789C0020B168 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A57258891C49789C0020B168 /* Build configuration list for PBXNativeTarget "MentorAndMenteesUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +579,7 @@
 				A572588B1C49789C0020B168 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
