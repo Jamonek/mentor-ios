@@ -52,7 +52,6 @@
 		A566CED41C4ADF20005E1FE7 /* TextFieldsEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldsEffects.swift; sourceTree = "<group>"; };
 		A566CED71C4AE02E005E1FE7 /* SpringTextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpringTextFieldExtension.swift; path = Extensions/SpringTextFieldExtension.swift; sourceTree = "<group>"; };
 		A566CEDB1C4BA4B6005E1FE7 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = Controllers/SignupViewController.swift; sourceTree = "<group>"; };
-		A566CEDD1C4BA4EF005E1FE7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = Storyboards/fr.lproj/Main.strings; sourceTree = "<group>"; };
 		A566CEE21C4BA548005E1FE7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A566CEE41C4BA54D005E1FE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A566CEE91C4BA67D005E1FE7 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Utils/Utils.swift; sourceTree = "<group>"; };
@@ -509,7 +508,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				A57258911C4982B60020B168 /* Base */,
-				A566CEDD1C4BA4EF005E1FE7 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
