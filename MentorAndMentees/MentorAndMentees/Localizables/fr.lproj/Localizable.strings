@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  MentorAndMentees
+
+  Created by Rebouh Aymen on 17/01/2016.
+  Copyright © 2016 Mentor And Mentees. All rights reserved.
+*/
+
+"Log in"  = "Connexion";
+"Sign up" = "Inscription";
