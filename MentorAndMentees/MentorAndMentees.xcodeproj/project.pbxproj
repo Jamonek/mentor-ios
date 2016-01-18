@@ -8,13 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		23AA0228838ED7A554543090 /* Pods_MentorAndMentees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA368650A539C2E5FCADA728 /* Pods_MentorAndMentees.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		A566CED51C4ADF20005E1FE7 /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566CED21C4ADF20005E1FE7 /* HoshiTextField.swift */; };
+		A566CED61C4ADF20005E1FE7 /* TextFieldsEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566CED41C4ADF20005E1FE7 /* TextFieldsEffects.swift */; };
+		A566CED81C4AE02E005E1FE7 /* SpringTextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566CED71C4AE02E005E1FE7 /* SpringTextFieldExtension.swift */; };
+		A566CEDC1C4BA4B6005E1FE7 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566CEDB1C4BA4B6005E1FE7 /* SignupViewController.swift */; };
+		A566CEE11C4BA548005E1FE7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A566CEE31C4BA548005E1FE7 /* Localizable.strings */; };
+		A566CEEA1C4BA67D005E1FE7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566CEE91C4BA67D005E1FE7 /* Utils.swift */; };
 		A572585F1C49789C0020B168 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A572585E1C49789C0020B168 /* AppDelegate.swift */; };
-		A57258611C49789C0020B168 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57258601C49789C0020B168 /* ViewController.swift */; };
-		A57258641C49789C0020B168 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57258621C49789C0020B168 /* Main.storyboard */; };
+		A57258611C49789C0020B168 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57258601C49789C0020B168 /* LoginViewController.swift */; };
 		A57258661C49789C0020B168 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A57258651C49789C0020B168 /* Assets.xcassets */; };
-		A57258691C49789C0020B168 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57258671C49789C0020B168 /* LaunchScreen.storyboard */; };
 		A57258741C49789C0020B168 /* MentorAndMenteesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57258731C49789C0020B168 /* MentorAndMenteesTests.swift */; };
 		A572587F1C49789C0020B168 /* MentorAndMenteesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A572587E1C49789C0020B168 /* MentorAndMenteesUITests.swift */; };
+		A57258921C4982B60020B168 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57258901C4982B60020B168 /* Main.storyboard */; };
+		A57258931C4983C30020B168 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A572586A1C49789C0020B168 /* Info.plist */; };
+		A57258951C499D0D0020B168 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57258941C499D0D0020B168 /* BaseViewController.swift */; };
+		A572589A1C499DE30020B168 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57258991C499DE30020B168 /* UIColorExtension.swift */; };
+		A5FAA3DF1C4C3E29004A3059 /* AWSegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FAA3DE1C4C3E29004A3059 /* AWSegmentedControlView.swift */; };
+		A5FAA3E11C4C47C2004A3059 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FAA3E01C4C47C2004A3059 /* UIViewExtension.swift */; };
+		A5FAA3E31C4C4CD6004A3059 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FAA3E21C4C4CD6004A3059 /* UIViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,19 +47,32 @@
 
 /* Begin PBXFileReference section */
 		09F42AC60706AD4F8FF5245E /* Pods-MentorAndMentees.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MentorAndMentees.release.xcconfig"; path = "Pods/Target Support Files/Pods-MentorAndMentees/Pods-MentorAndMentees.release.xcconfig"; sourceTree = "<group>"; };
+		A566CED21C4ADF20005E1FE7 /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
+		A566CED31C4ADF20005E1FE7 /* TextFieldEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldEffects.h; sourceTree = "<group>"; };
+		A566CED41C4ADF20005E1FE7 /* TextFieldsEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldsEffects.swift; sourceTree = "<group>"; };
+		A566CED71C4AE02E005E1FE7 /* SpringTextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpringTextFieldExtension.swift; path = Extensions/SpringTextFieldExtension.swift; sourceTree = "<group>"; };
+		A566CEDB1C4BA4B6005E1FE7 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = Controllers/SignupViewController.swift; sourceTree = "<group>"; };
+		A566CEDD1C4BA4EF005E1FE7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = Storyboards/fr.lproj/Main.strings; sourceTree = "<group>"; };
+		A566CEE21C4BA548005E1FE7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A566CEE41C4BA54D005E1FE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A566CEE91C4BA67D005E1FE7 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Utils/Utils.swift; sourceTree = "<group>"; };
 		A572585B1C49789C0020B168 /* MentorAndMentees.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MentorAndMentees.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A572585E1C49789C0020B168 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A57258601C49789C0020B168 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A57258631C49789C0020B168 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A57258651C49789C0020B168 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A57258681C49789C0020B168 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A572586A1C49789C0020B168 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A57258601C49789C0020B168 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
+		A57258651C49789C0020B168 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Assets/Assets.xcassets; sourceTree = "<group>"; };
+		A572586A1C49789C0020B168 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Properties/Info.plist; sourceTree = "<group>"; };
 		A572586F1C49789C0020B168 /* MentorAndMenteesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MentorAndMenteesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57258731C49789C0020B168 /* MentorAndMenteesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorAndMenteesTests.swift; sourceTree = "<group>"; };
 		A57258751C49789C0020B168 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A572587A1C49789C0020B168 /* MentorAndMenteesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MentorAndMenteesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A572587E1C49789C0020B168 /* MentorAndMenteesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorAndMenteesUITests.swift; sourceTree = "<group>"; };
 		A57258801C49789C0020B168 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A57258911C4982B60020B168 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Storyboards/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A57258941C499D0D0020B168 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Controllers/BaseViewController.swift; sourceTree = "<group>"; };
+		A57258991C499DE30020B168 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtension.swift; path = Extensions/UIColorExtension.swift; sourceTree = "<group>"; };
+		A5FAA3DE1C4C3E29004A3059 /* AWSegmentedControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSegmentedControlView.swift; sourceTree = "<group>"; };
+		A5FAA3E01C4C47C2004A3059 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = Extensions/UIViewExtension.swift; sourceTree = "<group>"; };
+		A5FAA3E21C4C4CD6004A3059 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = Extensions/UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		DC89D73CC2F74D5AA3419866 /* Pods-MentorAndMentees.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MentorAndMentees.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MentorAndMentees/Pods-MentorAndMentees.debug.xcconfig"; sourceTree = "<group>"; };
 		EA368650A539C2E5FCADA728 /* Pods_MentorAndMentees.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MentorAndMentees.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -96,6 +120,41 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A566CED11C4ADF09005E1FE7 /* HoshiTextField */ = {
+			isa = PBXGroup;
+			children = (
+				A566CED21C4ADF20005E1FE7 /* HoshiTextField.swift */,
+				A566CED31C4ADF20005E1FE7 /* TextFieldEffects.h */,
+				A566CED41C4ADF20005E1FE7 /* TextFieldsEffects.swift */,
+			);
+			name = HoshiTextField;
+			path = Librairies/HoshiTextField;
+			sourceTree = "<group>";
+		};
+		A566CEDA1C4AE06A005E1FE7 /* Librairies */ = {
+			isa = PBXGroup;
+			children = (
+				A566CED11C4ADF09005E1FE7 /* HoshiTextField */,
+			);
+			name = Librairies;
+			sourceTree = "<group>";
+		};
+		A566CEDE1C4BA51B005E1FE7 /* Localizables */ = {
+			isa = PBXGroup;
+			children = (
+				A566CEE31C4BA548005E1FE7 /* Localizable.strings */,
+			);
+			name = Localizables;
+			sourceTree = "<group>";
+		};
+		A566CEE81C4BA657005E1FE7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A566CEE91C4BA67D005E1FE7 /* Utils.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		A57258521C49789C0020B168 = {
 			isa = PBXGroup;
 			children = (
@@ -122,11 +181,15 @@
 			isa = PBXGroup;
 			children = (
 				A572585E1C49789C0020B168 /* AppDelegate.swift */,
-				A57258601C49789C0020B168 /* ViewController.swift */,
-				A57258621C49789C0020B168 /* Main.storyboard */,
-				A57258651C49789C0020B168 /* Assets.xcassets */,
-				A57258671C49789C0020B168 /* LaunchScreen.storyboard */,
-				A572586A1C49789C0020B168 /* Info.plist */,
+				A572588D1C4981BF0020B168 /* Storyboards */,
+				A572588C1C4981AD0020B168 /* Controllers */,
+				A5FAA3DD1C4C3E1A004A3059 /* Components */,
+				A57258961C499D950020B168 /* Extensions */,
+				A566CEE81C4BA657005E1FE7 /* Utils */,
+				A566CEDA1C4AE06A005E1FE7 /* Librairies */,
+				A566CEDE1C4BA51B005E1FE7 /* Localizables */,
+				A572588E1C4981D70020B168 /* Assets */,
+				A572588F1C49822B0020B168 /* Properties */,
 			);
 			path = MentorAndMentees;
 			sourceTree = "<group>";
@@ -147,6 +210,59 @@
 				A57258801C49789C0020B168 /* Info.plist */,
 			);
 			path = MentorAndMenteesUITests;
+			sourceTree = "<group>";
+		};
+		A572588C1C4981AD0020B168 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A57258601C49789C0020B168 /* LoginViewController.swift */,
+				A57258941C499D0D0020B168 /* BaseViewController.swift */,
+				A566CEDB1C4BA4B6005E1FE7 /* SignupViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A572588D1C4981BF0020B168 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A57258901C4982B60020B168 /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		A572588E1C4981D70020B168 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				A57258651C49789C0020B168 /* Assets.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		A572588F1C49822B0020B168 /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				A572586A1C49789C0020B168 /* Info.plist */,
+			);
+			name = Properties;
+			sourceTree = "<group>";
+		};
+		A57258961C499D950020B168 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A57258991C499DE30020B168 /* UIColorExtension.swift */,
+				A566CED71C4AE02E005E1FE7 /* SpringTextFieldExtension.swift */,
+				A5FAA3E01C4C47C2004A3059 /* UIViewExtension.swift */,
+				A5FAA3E21C4C4CD6004A3059 /* UIViewControllerExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		A5FAA3DD1C4C3E1A004A3059 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A5FAA3DE1C4C3E29004A3059 /* AWSegmentedControlView.swift */,
+			);
+			name = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,9 +372,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A57258691C49789C0020B168 /* LaunchScreen.storyboard in Resources */,
+				A57258931C4983C30020B168 /* Info.plist in Resources */,
+				A566CEE11C4BA548005E1FE7 /* Localizable.strings in Resources */,
+				A57258921C4982B60020B168 /* Main.storyboard in Resources */,
 				A57258661C49789C0020B168 /* Assets.xcassets in Resources */,
-				A57258641C49789C0020B168 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,8 +448,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A57258611C49789C0020B168 /* ViewController.swift in Sources */,
+				A57258611C49789C0020B168 /* LoginViewController.swift in Sources */,
+				A5FAA3DF1C4C3E29004A3059 /* AWSegmentedControlView.swift in Sources */,
+				A5FAA3E11C4C47C2004A3059 /* UIViewExtension.swift in Sources */,
+				A572589A1C499DE30020B168 /* UIColorExtension.swift in Sources */,
+				A566CEEA1C4BA67D005E1FE7 /* Utils.swift in Sources */,
+				A566CEDC1C4BA4B6005E1FE7 /* SignupViewController.swift in Sources */,
 				A572585F1C49789C0020B168 /* AppDelegate.swift in Sources */,
+				A57258951C499D0D0020B168 /* BaseViewController.swift in Sources */,
+				A5FAA3E31C4C4CD6004A3059 /* UIViewControllerExtension.swift in Sources */,
+				A566CED81C4AE02E005E1FE7 /* SpringTextFieldExtension.swift in Sources */,
+				A566CED61C4ADF20005E1FE7 /* TextFieldsEffects.swift in Sources */,
+				A566CED51C4ADF20005E1FE7 /* HoshiTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,20 +495,23 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A57258621C49789C0020B168 /* Main.storyboard */ = {
+		A566CEE31C4BA548005E1FE7 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A57258631C49789C0020B168 /* Base */,
+				A566CEE21C4BA548005E1FE7 /* fr */,
+				A566CEE41C4BA54D005E1FE7 /* en */,
 			);
-			name = Main.storyboard;
+			name = Localizable.strings;
+			path = Localizables;
 			sourceTree = "<group>";
 		};
-		A57258671C49789C0020B168 /* LaunchScreen.storyboard */ = {
+		A57258901C4982B60020B168 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A57258681C49789C0020B168 /* Base */,
+				A57258911C4982B60020B168 /* Base */,
+				A566CEDD1C4BA4EF005E1FE7 /* fr */,
 			);
-			name = LaunchScreen.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -423,7 +553,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -462,7 +592,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
