@@ -55,9 +55,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods-MentorAndMentees/Alamofire.framework'
   install_framework 'Pods-MentorAndMentees/AlamofireObjectMapper.framework'
   install_framework 'Pods-MentorAndMentees/ObjectMapper.framework'
+  install_framework 'Pods-MentorAndMentees/Spring.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods-MentorAndMentees/Alamofire.framework'
   install_framework 'Pods-MentorAndMentees/AlamofireObjectMapper.framework'
   install_framework 'Pods-MentorAndMentees/ObjectMapper.framework'
+  install_framework 'Pods-MentorAndMentees/Spring.framework'
 fi

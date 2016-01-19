@@ -1,0 +1,36 @@
+
+/* Class = "UIButton"; normalTitle = "Reset your password"; ObjectID = "0vd-Ug-zwY"; */
+"0vd-Ug-zwY.normalTitle" = "Reset your password";
+
+/* Class = "UIButton"; normalTitle = "Sign up"; ObjectID = "4sU-F3-0IN"; */
+"4sU-F3-0IN.normalTitle" = "Sign up";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "52H-n3-syZ"; */
+"52H-n3-syZ.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "EMAIL"; ObjectID = "6ib-y8-FJm"; */
+"6ib-y8-FJm.placeholder" = "EMAIL";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "71y-lN-8oR"; */
+"71y-lN-8oR.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "Log in"; ObjectID = "SHg-Yu-bLt"; */
+"SHg-Yu-bLt.title" = "Log in";
+
+/* Class = "UIButton"; normalTitle = "Log in"; ObjectID = "ap8-MP-sID"; */
+"ap8-MP-sID.normalTitle" = "Log in";
+
+/* Class = "UITextField"; placeholder = "PASSWORD"; ObjectID = "fNf-ky-Yac"; */
+"fNf-ky-Yac.placeholder" = "PASSWORD";
+
+/* Class = "UITextField"; placeholder = "EMAIL"; ObjectID = "ftr-vv-gSQ"; */
+"ftr-vv-gSQ.placeholder" = "EMAIL";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "mUM-wS-HqO"; */
+"mUM-wS-HqO.normalTitle" = "Next";
+
+/* Class = "UINavigationItem"; title = "Log in"; ObjectID = "neP-nw-ST5"; */
+"neP-nw-ST5.title" = "Log in";
+
+/* Class = "UITextField"; placeholder = "PASSWORD"; ObjectID = "qhD-cx-e2k"; */
+"qhD-cx-e2k.placeholder" = "PASSWORD";
