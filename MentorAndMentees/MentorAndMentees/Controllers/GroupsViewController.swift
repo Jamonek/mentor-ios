@@ -12,7 +12,18 @@ class GroupsViewController: BaseViewController {
   
   // MARK: - Properties -
   
-  @IBOutlet weak var searchGroupTextField: UITextField!
+  @IBOutlet weak var groupsTitleLabel: UILabel! {
+    didSet {
+      groupsTitleLabel.text = Localizable("Groups")
+    }
+  }
+  
+  @IBOutlet weak var searchGroupTextField: UITextField! {
+    didSet {
+      searchGroupTextField.placeholder = Localizable("Search")
+    }
+  }
+  
   @IBOutlet weak var groupsCollectionView: UICollectionView!
 }
 

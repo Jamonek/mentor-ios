@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E27e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bUc-Ry-KoT">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -26,7 +25,7 @@
                                     <constraint firstAttribute="width" constant="76" id="ql6-xg-gLc"/>
                                     <constraint firstAttribute="width" constant="65" id="xOM-lr-LCn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="Log in">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -100,10 +99,10 @@
                                     <action selector="showOrHidePassword:" destination="E1B-p0-haH" eventType="touchUpInside" id="gpq-MO-VXJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vd-Ug-zwY">
-                                <rect key="frame" x="15" y="628" width="145" height="29"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vd-Ug-zwY">
+                                <rect key="frame" x="15" y="628" width="261" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="145" id="1Gy-3l-jHq"/>
+                                    <constraint firstAttribute="width" constant="261" id="1Gy-3l-jHq"/>
                                     <constraint firstAttribute="width" constant="65" id="6oD-YR-tI4"/>
                                     <constraint firstAttribute="height" constant="29" id="epi-EQ-J0E"/>
                                 </constraints>
@@ -152,7 +151,7 @@
                                             <constraint firstAttribute="width" constant="65" id="cfI-lx-lFw"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="76" id="rwn-B0-KEh"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <state key="normal" title="Sign up">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -202,6 +201,7 @@
                             <constraint firstItem="71y-lN-8oR" firstAttribute="centerY" secondItem="qhD-cx-e2k" secondAttribute="centerY" constant="4.5" id="ZdS-Eh-nln"/>
                             <constraint firstItem="10O-Ui-v2A" firstAttribute="centerX" secondItem="ziz-NC-6p5" secondAttribute="centerX" id="aNg-7P-Rzo"/>
                             <constraint firstItem="10O-Ui-v2A" firstAttribute="top" secondItem="QKm-Wl-JIJ" secondAttribute="bottom" constant="18" id="bCa-V3-kjQ"/>
+                            <constraint firstItem="ap8-MP-sID" firstAttribute="leading" secondItem="0vd-Ug-zwY" secondAttribute="trailing" constant="8" id="c3a-In-uz9"/>
                             <constraint firstItem="MDZ-c1-OiZ" firstAttribute="top" secondItem="0vd-Ug-zwY" secondAttribute="bottom" constant="10" id="do1-mT-sL1"/>
                             <constraint firstAttribute="trailing" secondItem="ap8-MP-sID" secondAttribute="trailing" constant="15" id="gPI-Kv-6xB"/>
                             <constraint firstAttribute="trailing" secondItem="ftr-vv-gSQ" secondAttribute="trailing" constant="20" id="our-tb-te3"/>
@@ -244,6 +244,7 @@
                         <outlet property="emailTextField" destination="ftr-vv-gSQ" id="Z3k-uD-HK6"/>
                         <outlet property="loginButton" destination="ap8-MP-sID" id="ACO-OP-B2u"/>
                         <outlet property="loginButtonBottomConstraint" destination="McI-Rg-xOG" id="Vt0-Xf-WXD"/>
+                        <outlet property="loginTitleLabel" destination="8dJ-0y-FJX" id="bKV-k9-goc"/>
                         <outlet property="passwordTextField" destination="qhD-cx-e2k" id="KcU-Xv-O2q"/>
                         <outlet property="resetPasswordButton" destination="0vd-Ug-zwY" id="8aw-48-CCu"/>
                         <outlet property="resetPasswordButtonBottomConstraint" destination="do1-mT-sL1" id="2L0-Pi-M7w"/>
@@ -297,7 +298,7 @@
                                 <state key="normal" title="Button" image="eye"/>
                                 <state key="selected" image="closedEye"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profil" translatesAutoresizingMaskIntoConstraints="NO" id="yaa-s2-BAj">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="yaa-s2-BAj">
                                 <rect key="frame" x="131" y="134" width="112" height="110"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -427,12 +428,6 @@
                                             <constraint firstAttribute="width" constant="369" id="i7G-T7-0VC"/>
                                             <constraint firstAttribute="width" constant="369" id="u3o-w9-VdA"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="firstButtonTitle" value="Mentor"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="secondButtonTitle" value="Mentees"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="firstButtonImage" value="mentor"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="secondButtonImage" value="mentee"/>
-                                        </userDefinedRuntimeAttributes>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="i7G-T7-0VC"/>
@@ -490,7 +485,7 @@
                                     <constraint firstAttribute="width" constant="76" id="iQb-Is-quc"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="76" id="pQV-pc-nY3"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="Sign up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -571,9 +566,11 @@
                         <outlet property="birthdayTextField" destination="LEX-Jx-Szy" id="SHn-vt-RJL"/>
                         <outlet property="emailTextField" destination="dfq-qs-eEZ" id="zke-x9-Zw0"/>
                         <outlet property="fullNameTextField" destination="Bxu-au-ROS" id="JuJ-mF-5Dp"/>
+                        <outlet property="mentorSegmentedControl" destination="1KE-uN-fji" id="m9H-Z8-XlD"/>
                         <outlet property="passwordTextField" destination="fNf-ky-Yac" id="fgt-bJ-8iN"/>
                         <outlet property="profilePictureImage" destination="yaa-s2-BAj" id="cVg-cW-ZSG"/>
                         <outlet property="signupButton" destination="KQQ-yA-CNU" id="epj-Xh-fDF"/>
+                        <outlet property="signupTitleLabel" destination="UPR-dV-ZA7" id="Tqx-LE-D7o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eSX-OT-ZED" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -729,7 +726,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dN-gR-7Nw">
-                                                            <rect key="frame" x="5" y="83" width="65" height="21"/>
+                                                            <rect key="frame" x="4" y="83" width="65" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="uaz-3p-rI0"/>
                                                             </constraints>
@@ -747,6 +744,9 @@
                                                     </constraints>
                                                     <color key="tintColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="Button" image="dotReverse"/>
+                                                    <connections>
+                                                        <action selector="showMenu:" destination="hDQ-Eo-J5S" eventType="touchUpInside" id="bN4-Vc-qIK"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -771,6 +771,7 @@
                                             <outlet property="iconImageView" destination="tpc-sO-gb3" id="S1m-Ix-QLm"/>
                                             <outlet property="lastActivityLabel" destination="1dN-gR-7Nw" id="ZLV-7S-hhN"/>
                                             <outlet property="membersLabel" destination="HOf-Xp-Xmm" id="iNH-AX-kWb"/>
+                                            <outlet property="moreButton" destination="kj0-bk-qLd" id="o1P-aH-fF0"/>
                                             <outlet property="nameLabel" destination="XAu-Nu-Ste" id="CtB-Ei-rKP"/>
                                         </connections>
                                     </collectionViewCell>
@@ -807,6 +808,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="groupsCollectionView" destination="zoI-0I-85v" id="0Ld-Sq-eoy"/>
+                        <outlet property="groupsTitleLabel" destination="26a-QF-c7G" id="1d4-kz-pzQ"/>
                         <outlet property="searchGroupTextField" destination="tZd-qa-DmZ" id="uxe-K0-BfC"/>
                     </connections>
                 </viewController>
@@ -822,7 +824,7 @@
         <image name="closedEye" width="20" height="20"/>
         <image name="dotReverse" width="20" height="20"/>
         <image name="eye" width="20" height="20"/>
-        <image name="profil" width="100" height="99"/>
+        <image name="profile" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="t1K-o6-yk1"/>

@@ -12,6 +12,12 @@ class SignupViewController: BaseViewController {
   
   // MARK: - Properties -
   
+  @IBOutlet weak var signupTitleLabel: UILabel! {
+    didSet {
+      signupTitleLabel.text = Localizable("Sign up")
+    }
+  }
+  
   @IBOutlet weak var backButton: UIButton!  {
     didSet {
       backButton.layer.cornerRadius = 3.0
@@ -21,6 +27,7 @@ class SignupViewController: BaseViewController {
   @IBOutlet weak var signupButton: UIButton! {
     didSet {
       signupButton.layer.cornerRadius = 3.0
+      signupButton.setTitle(Localizable("Sign up"), forState: .Normal)
     }
   }
 
@@ -44,18 +51,34 @@ class SignupViewController: BaseViewController {
     }
   }
   
-  @IBOutlet weak var fullNameTextField: HoshiTextField!
-  @IBOutlet weak var emailTextField: HoshiTextField!
-  @IBOutlet weak var passwordTextField: HoshiTextField!
-  @IBOutlet weak var birthdayTextField: HoshiTextField!
+  @IBOutlet weak var fullNameTextField: HoshiTextField! {
+    didSet {
+      fullNameTextField.placeholder = Localizable("Full name").uppercaseString
+    }
+  }
   
-  // MARK: - Lifecycle -
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    self.title = Localizable("Sign up")
-    self.navigationController?.navigationBarHidden = true
+  @IBOutlet weak var emailTextField: HoshiTextField! {
+    didSet {
+      emailTextField.placeholder = Localizable("Email").uppercaseString
+    }
+  }
+  
+  @IBOutlet weak var passwordTextField: HoshiTextField! {
+    didSet {
+      passwordTextField.placeholder = Localizable("Password").uppercaseString
+    }
+  }
+  
+  @IBOutlet weak var birthdayTextField: HoshiTextField! {
+    didSet {
+      birthdayTextField.placeholder = Localizable("Birthday").uppercaseString
+    }
+  }
+  
+  @IBOutlet weak var mentorSegmentedControl: AWSegmentedControlView! {
+    didSet {
+      mentorSegmentedControl.dataSource = self
+    }
   }
   
   // MARK: - User Interaction -
@@ -79,6 +102,16 @@ extension SignupViewController: UIImagePickerControllerDelegate, UINavigationCon
   }
 }
 
+// MARK: - AWSegmentedControlView Data source -
 
+extension SignupViewController: AWSegmentedControlViewDataSource {
+  func titlesForAWSegmentedControlView(awSegmentedControlView: AWSegmentedControlView) -> AWSegmentedControlViewTitles {
+    return (left: Localizable("Mentor"), right: Localizable("Mentee"))
+  }
+  
+  func imagesNamesForAWSegmentedControlView(awSegmentedControlView: AWSegmentedControlView) -> AWSegmentedControlViewImages {
+    return (left: "mentor", right: "mentee")
+  }
+}
 
 

@@ -14,23 +14,42 @@ class LoginViewController: BaseViewController {
   
   // MARK: - Properties -
   
-  @IBOutlet weak var emailTextField: HoshiTextField!
-  @IBOutlet weak var passwordTextField: HoshiTextField!
+  @IBOutlet weak var loginTitleLabel: UILabel! {
+    didSet {
+      loginTitleLabel.text = Localizable("Log in")
+    }
+  }
+  
+  @IBOutlet weak var emailTextField: HoshiTextField! {
+    didSet {
+      emailTextField.placeholder = Localizable("Email").uppercaseString
+    }
+  }
+  
+  @IBOutlet weak var passwordTextField: HoshiTextField!  {
+    didSet {
+      passwordTextField.placeholder = Localizable("Password").uppercaseString
+    }
+  }
   
   @IBOutlet weak var loginButton: UIButton! {
     didSet {
       loginButton.layer.cornerRadius = 3.0
+      loginButton.setTitle(Localizable("Log in"), forState: .Normal)
     }
   }
   
   @IBOutlet weak var signupButton: UIButton! {
     didSet {
       signupButton.layer.cornerRadius = 3.0
+      signupButton.setTitle(Localizable("Sign up"), forState: .Normal)
     }
   }
   
   @IBOutlet weak var resetPasswordButton: UIButton! {
     didSet {
+      resetPasswordButton.setTitle(Localizable("Reset your password"), forState: .Normal)
+
       // to underline the reset button
       let attributes                                 = [NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue]
       let attributedText                             = NSAttributedString(string: resetPasswordButton.currentTitle!, attributes: attributes)
