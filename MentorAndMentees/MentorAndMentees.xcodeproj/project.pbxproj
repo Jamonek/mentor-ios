@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23AA0228838ED7A554543090 /* Pods_MentorAndMentees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA368650A539C2E5FCADA728 /* Pods_MentorAndMentees.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		23AA0228838ED7A554543090 /* Pods_MentorAndMentees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA368650A539C2E5FCADA728 /* Pods_MentorAndMentees.framework */; };
 		A54C80711C500F7000097A2C /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C80701C500F7000097A2C /* GroupsViewController.swift */; };
 		A54C80741C50124F00097A2C /* GroupItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C80731C50124F00097A2C /* GroupItemCollectionViewCell.swift */; };
 		A566CED51C4ADF20005E1FE7 /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566CED21C4ADF20005E1FE7 /* HoshiTextField.swift */; };
