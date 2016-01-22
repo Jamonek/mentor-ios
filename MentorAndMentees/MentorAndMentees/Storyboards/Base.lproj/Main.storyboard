@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E27e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bUc-Ry-KoT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bUc-Ry-KoT">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -120,7 +120,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dJ-0y-FJX">
-                                        <rect key="frame" x="163.5" y="32" width="48" height="21"/>
+                                        <rect key="frame" x="164" y="32" width="48" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="f6W-8L-Mgn"/>
                                         </constraints>
@@ -161,7 +161,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <segue destination="JRg-Y7-tRt" kind="presentation" id="aqB-YP-WoW"/>
+                                            <segue destination="JRg-Y7-tRt" kind="show" id="yAw-Fp-ReR"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -233,9 +233,6 @@
                                         <exclude reference="NPU-IW-WtD"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <segue destination="JRg-Y7-tRt" kind="presentation" id="t1K-o6-yk1"/>
-                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -402,7 +399,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPR-dV-ZA7">
-                                        <rect key="frame" x="157.5" y="32" width="60" height="21"/>
+                                        <rect key="frame" x="158" y="32" width="60" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="5X8-Fg-nDE"/>
                                         </constraints>
@@ -498,6 +495,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="login:" destination="E1B-p0-haH" eventType="touchUpInside" id="ad8-0c-Nhb"/>
+                                    <segue destination="Z3N-6i-WaI" kind="show" id="OLw-MO-5IM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -593,7 +591,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Groups" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26a-QF-c7G">
-                                        <rect key="frame" x="159" y="32" width="58.5" height="21"/>
+                                        <rect key="frame" x="159" y="32" width="59" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="Fms-is-Lu1"/>
                                         </constraints>
@@ -814,7 +812,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MZP-pS-B9W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2468.5" y="810.5"/>
+            <point key="canvasLocation" x="2696.5" y="841.5"/>
         </scene>
     </scenes>
     <resources>
@@ -827,6 +825,6 @@
         <image name="profile" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="t1K-o6-yk1"/>
+        <segue reference="OLw-MO-5IM"/>
     </inferredMetricsTieBreakers>
 </document>

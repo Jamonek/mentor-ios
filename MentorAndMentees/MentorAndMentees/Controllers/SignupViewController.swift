@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SignupViewController: BaseViewController {
   
@@ -81,6 +83,43 @@ class SignupViewController: BaseViewController {
     }
   }
   
+  // MARK: - Lifecycle -
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    let emailValidation    = emailTextField.rx_text.map    { self.isEmailValid($0) }
+    let fullNameValidation = fullNameTextField.rx_text.map { self.isFullNameValid($0) }
+    let passwordValidation = passwordTextField.rx_text.map { $0.isNotEmpty }
+    let birthdayValidation = birthdayTextField.rx_text.map { $0.isNotEmpty }
+    
+    let signupButtonEnabled = Observable.combineLatest(emailValidation, fullNameValidation, passwordValidation, birthdayValidation) {
+      isEmailValid, isFullNameValid, isPasswordValid, isBirthdayValid in
+        return isEmailValid && isFullNameValid && isPasswordValid && isBirthdayValid
+    }
+    
+    signupButtonEnabled.bindTo(signupButton.rx_enabled).addDisposableTo(disposeBag)
+    
+  }
+  
+  // MARK: - Rules -
+  
+  private struct Regex {
+    static let email = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+    static let fullName = "[A-Z0-9a-z-]+ [A-Z0-9a-z-]+"
+  }
+  
+  func isEmailValid(email: String) -> Bool {
+    let regex = Regex.email
+    return NSPredicate(format: "SELF MATCHES %@", regex).evaluateWithObject(email)
+  }
+  
+  func isFullNameValid(email: String) -> Bool {
+    let regex = Regex.fullName
+    return NSPredicate(format: "SELF MATCHES %@", regex).evaluateWithObject(email)
+  }
+  
+
   // MARK: - User Interaction -
   
   @IBAction func showImagePicker(sender: AnyObject) {

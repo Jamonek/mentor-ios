@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 /**
  Used to have common properties for all views controllers like the background color.
  */
 class BaseViewController: UIViewController {
   
+  // MARK: - Properties -
+  
+  lazy var disposeBag = DisposeBag()
+
   // MARK: - Lifecycle -
 
   override func viewDidLoad() {
