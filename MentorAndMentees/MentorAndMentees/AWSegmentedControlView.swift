@@ -73,7 +73,10 @@ class AWSegmentedControlView: UIView {
     if let imageNameLeft  = dataSource?.imagesNamesForAWSegmentedControlView(self).left,
       imageNameRight = dataSource?.imagesNamesForAWSegmentedControlView(self).right {
         firstButton.setImage(UIImage(named: imageNameLeft), forState: .Normal)
+        firstButton.setImage(UIImage(named: imageNameLeft), forState: .Highlighted)
+
         secondButton.setImage(UIImage(named: imageNameRight), forState: .Normal)
+        secondButton.setImage(UIImage(named: imageNameRight), forState: .Highlighted)
     }
   }
   
