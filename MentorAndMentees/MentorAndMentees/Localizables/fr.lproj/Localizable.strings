@@ -6,5 +6,17 @@
   Copyright © 2016 Mentor And Mentees. All rights reserved.
 */
 
-"Log in"  = "Connexion";
-"Sign up" = "Inscription";
+"Log in"              = "Connexion";
+"Sign up"             = "Inscription";
+"Groups"              = "Groupes";
+"Search"              = "Rechercher";
+"Email"               = "Email";
+"Password"            = "Mot de passe";
+"Reset your password" = "Réinitialiser votre mot de passe";
+"Delete"              = "Supprimer";
+"Rename"              = "Renommer";
+"More"                = "Plus";
+"Full name"           = "Nom complet";
+"Birthday"            = "Anniverssaire";
+"Mentor"              = "Mentor";
+"Mentee"              = "Mentoré";

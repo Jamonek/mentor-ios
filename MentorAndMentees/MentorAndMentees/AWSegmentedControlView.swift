@@ -8,39 +8,19 @@
 
 import UIKit
 
+typealias AWSegmentedControlViewTitles = (left: String, right: String)
+typealias AWSegmentedControlViewImages = AWSegmentedControlViewTitles
+
+protocol AWSegmentedControlViewDataSource: class {
+  func titlesForAWSegmentedControlView(awSegmentedControlView: AWSegmentedControlView) -> AWSegmentedControlViewTitles
+  func imagesNamesForAWSegmentedControlView(awSegmentedControlView: AWSegmentedControlView) -> AWSegmentedControlViewImages
+}
+
 class AWSegmentedControlView: UIView {
   
   // MARK: - Properties -
 
-  // Setted on the storyboard
-  @IBInspectable var firstButtonTitle: String = "Button1" {
-    didSet {
-      firstButton.setTitle(firstButtonTitle, forState: .Normal)
-    }
-  }
-  
-  // Setted on the storyboard
-  @IBInspectable var firstButtonImage: String = "Button1" {
-    didSet {
-      firstButton.setImage(UIImage(named: firstButtonImage), forState: .Normal)
-      firstButton.setImage(UIImage(named: firstButtonImage), forState: .Highlighted)
-    }
-  }
-
-  // Setted on the storyboard
-  @IBInspectable var secondButtonTitle: String = "ButtonImage2" {
-    didSet {
-      secondButton.setTitle(secondButtonTitle, forState: .Normal)
-    }
-  }
-  
-  // Setted on the storyboard
-  @IBInspectable var secondButtonImage: String = "ButtonImage1" {
-    didSet {
-      secondButton.setImage(UIImage(named: secondButtonImage), forState: .Normal)
-      secondButton.setImage(UIImage(named: secondButtonImage), forState: .Highlighted)
-    }
-  }
+  weak var dataSource: AWSegmentedControlViewDataSource?
 
   var firstButton       = UIButton(type: .Custom)
   var secondButton      = UIButton(type: .Custom)
@@ -50,12 +30,11 @@ class AWSegmentedControlView: UIView {
   
   // MARK: - Lifecycle -
 
-  // Called when loaded from the storyboard
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     configure()
   }
-  
+
   // MARK: - Init -
   
   private struct SegmentedControlProperties {
@@ -66,29 +45,39 @@ class AWSegmentedControlView: UIView {
   }
   
   private func configure() {
-    
     backgroundColor = secondaryColor.colorWithAlphaComponent(0.5)
     
     mainGradientColor.startPoint   = CGPoint.zero
     mainGradientColor.endPoint     = CGPoint(x: 1.0, y: 0.0)
     mainGradientColor.colors       = [SegmentedControlProperties.gradientColor.left.CGColor, SegmentedControlProperties.gradientColor.right.CGColor]
-
-    firstButton.setTitle(firstButtonTitle, forState: .Normal)
-    firstButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-    firstButton.addTarget(self, action: "animate", forControlEvents: .TouchUpInside)
-    firstButton.imageEdgeInsets   = SegmentedControlProperties.imageEdgeInsets
-    firstButton.titleLabel?.font  = SegmentedControlProperties.font
-
-    secondButton.setTitle(secondButtonTitle, forState: .Normal)
-    secondButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-    secondButton.addTarget(self, action: "animate", forControlEvents: .TouchUpInside)
-    secondButton.imageEdgeInsets  = SegmentedControlProperties.imageEdgeInsets
-    secondButton.titleLabel?.font = SegmentedControlProperties.font
     
     layer.addSublayer(mainGradientColor)
     
     addSubview(firstButton)
     addSubview(secondButton)
+  }
+  
+  private func configureTitlesAndImages() {
+    firstButton.setTitle(dataSource?.titlesForAWSegmentedControlView(self).left, forState: .Normal)
+    firstButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+    firstButton.addTarget(self, action: "animate", forControlEvents: .TouchUpInside)
+    firstButton.imageEdgeInsets   = SegmentedControlProperties.imageEdgeInsets
+    firstButton.titleLabel?.font  = SegmentedControlProperties.font
+    
+    secondButton.setTitle(dataSource?.titlesForAWSegmentedControlView(self).right, forState: .Normal)
+    secondButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+    secondButton.addTarget(self, action: "animate", forControlEvents: .TouchUpInside)
+    secondButton.imageEdgeInsets  = SegmentedControlProperties.imageEdgeInsets
+    secondButton.titleLabel?.font = SegmentedControlProperties.font
+    
+    if let imageNameLeft  = dataSource?.imagesNamesForAWSegmentedControlView(self).left,
+      imageNameRight = dataSource?.imagesNamesForAWSegmentedControlView(self).right {
+        firstButton.setImage(UIImage(named: imageNameLeft), forState: .Normal)
+        firstButton.setImage(UIImage(named: imageNameLeft), forState: .Highlighted)
+
+        secondButton.setImage(UIImage(named: imageNameRight), forState: .Normal)
+        secondButton.setImage(UIImage(named: imageNameRight), forState: .Highlighted)
+    }
   }
   
   private func setup() {
@@ -101,6 +90,8 @@ class AWSegmentedControlView: UIView {
     secondButton.layer.cornerRadius = firstButton.midHeight
   }
   
+  // MARK: - UI Appareance -
+
   func animate() {
     UIView.animateWithDuration(0.5, animations: {
       let endFrame = CGRect(x: self.isLeft ? self.midWidth : 0.0, y: 0.0, width: self.midWidth, height: self.bounds.height)
@@ -115,5 +106,6 @@ class AWSegmentedControlView: UIView {
   override func layoutSubviews() {
     super.layoutSubviews()
     setup()
+    configureTitlesAndImages()
   }
 }

@@ -7,10 +7,18 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SignupViewController: BaseViewController {
   
   // MARK: - Properties -
+  
+  @IBOutlet weak var signupTitleLabel: UILabel! {
+    didSet {
+      signupTitleLabel.text = Localizable("Sign up")
+    }
+  }
   
   @IBOutlet weak var backButton: UIButton!  {
     didSet {
@@ -21,6 +29,7 @@ class SignupViewController: BaseViewController {
   @IBOutlet weak var signupButton: UIButton! {
     didSet {
       signupButton.layer.cornerRadius = 3.0
+      signupButton.setTitle(Localizable("Sign up"), forState: .Normal)
     }
   }
 
@@ -44,20 +53,73 @@ class SignupViewController: BaseViewController {
     }
   }
   
-  @IBOutlet weak var fullNameTextField: HoshiTextField!
-  @IBOutlet weak var emailTextField: HoshiTextField!
-  @IBOutlet weak var passwordTextField: HoshiTextField!
-  @IBOutlet weak var birthdayTextField: HoshiTextField!
+  @IBOutlet weak var fullNameTextField: HoshiTextField! {
+    didSet {
+      fullNameTextField.placeholder = Localizable("Full name").uppercaseString
+    }
+  }
+  
+  @IBOutlet weak var emailTextField: HoshiTextField! {
+    didSet {
+      emailTextField.placeholder = Localizable("Email").uppercaseString
+    }
+  }
+  
+  @IBOutlet weak var passwordTextField: HoshiTextField! {
+    didSet {
+      passwordTextField.placeholder = Localizable("Password").uppercaseString
+    }
+  }
+  
+  @IBOutlet weak var birthdayTextField: HoshiTextField! {
+    didSet {
+      birthdayTextField.placeholder = Localizable("Birthday").uppercaseString
+    }
+  }
+  
+  @IBOutlet weak var mentorSegmentedControl: AWSegmentedControlView! {
+    didSet {
+      mentorSegmentedControl.dataSource = self
+    }
+  }
   
   // MARK: - Lifecycle -
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.title = Localizable("Sign up")
-    self.navigationController?.navigationBarHidden = true
+    let emailValidation    = emailTextField.rx_text.map    { self.isEmailValid($0) }
+    let fullNameValidation = fullNameTextField.rx_text.map { self.isFullNameValid($0) }
+    let passwordValidation = passwordTextField.rx_text.map { $0.isNotEmpty }
+    let birthdayValidation = birthdayTextField.rx_text.map { $0.isNotEmpty }
+    
+    let signupButtonEnabled = Observable.combineLatest(emailValidation, fullNameValidation, passwordValidation, birthdayValidation) {
+      isEmailValid, isFullNameValid, isPasswordValid, isBirthdayValid in
+        return isEmailValid && isFullNameValid && isPasswordValid && isBirthdayValid
+    }
+    
+    signupButtonEnabled.bindTo(signupButton.rx_enabled).addDisposableTo(disposeBag)
+    
   }
   
+  // MARK: - Rules -
+  
+  private struct Regex {
+    static let email = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+    static let fullName = "[A-Z0-9a-z-]+ [A-Z0-9a-z-]+"
+  }
+  
+  func isEmailValid(email: String) -> Bool {
+    let regex = Regex.email
+    return NSPredicate(format: "SELF MATCHES %@", regex).evaluateWithObject(email)
+  }
+  
+  func isFullNameValid(email: String) -> Bool {
+    let regex = Regex.fullName
+    return NSPredicate(format: "SELF MATCHES %@", regex).evaluateWithObject(email)
+  }
+  
+
   // MARK: - User Interaction -
   
   @IBAction func showImagePicker(sender: AnyObject) {
@@ -79,6 +141,16 @@ extension SignupViewController: UIImagePickerControllerDelegate, UINavigationCon
   }
 }
 
+// MARK: - AWSegmentedControlView Data source -
 
+extension SignupViewController: AWSegmentedControlViewDataSource {
+  func titlesForAWSegmentedControlView(awSegmentedControlView: AWSegmentedControlView) -> AWSegmentedControlViewTitles {
+    return (left: Localizable("Mentor"), right: Localizable("Mentee"))
+  }
+  
+  func imagesNamesForAWSegmentedControlView(awSegmentedControlView: AWSegmentedControlView) -> AWSegmentedControlViewImages {
+    return (left: "mentor", right: "mentee")
+  }
+}
 
 
