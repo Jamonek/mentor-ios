@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		23AA0228838ED7A554543090 /* Pods_MentorAndMentees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA368650A539C2E5FCADA728 /* Pods_MentorAndMentees.framework */; };
+		A5280FAD1C652E66004E38C8 /* MentorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5280FAB1C652E66004E38C8 /* MentorButton.swift */; };
+		A5280FB11C65320D004E38C8 /* BaseKeyboardNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5280FB01C65320D004E38C8 /* BaseKeyboardNotificationViewController.swift */; };
+		A52C51181C76341500B8DC02 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52C51171C76341500B8DC02 /* SignupViewController.swift */; };
+		A52C511A1C76344200B8DC02 /* SignupEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52C51191C76344200B8DC02 /* SignupEmailViewController.swift */; };
 		A54C80711C500F7000097A2C /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C80701C500F7000097A2C /* GroupsViewController.swift */; };
 		A54C80741C50124F00097A2C /* GroupItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C80731C50124F00097A2C /* GroupItemCollectionViewCell.swift */; };
 		A566CED51C4ADF20005E1FE7 /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566CED21C4ADF20005E1FE7 /* HoshiTextField.swift */; };
 		A566CED61C4ADF20005E1FE7 /* TextFieldsEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566CED41C4ADF20005E1FE7 /* TextFieldsEffects.swift */; };
 		A566CED81C4AE02E005E1FE7 /* SpringTextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566CED71C4AE02E005E1FE7 /* SpringTextFieldExtension.swift */; };
-		A566CEDC1C4BA4B6005E1FE7 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566CEDB1C4BA4B6005E1FE7 /* SignupViewController.swift */; };
 		A566CEE11C4BA548005E1FE7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A566CEE31C4BA548005E1FE7 /* Localizable.strings */; };
 		A566CEEA1C4BA67D005E1FE7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566CEE91C4BA67D005E1FE7 /* Utils.swift */; };
 		A572585F1C49789C0020B168 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A572585E1C49789C0020B168 /* AppDelegate.swift */; };
@@ -25,7 +28,6 @@
 		A57258931C4983C30020B168 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A572586A1C49789C0020B168 /* Info.plist */; };
 		A57258951C499D0D0020B168 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57258941C499D0D0020B168 /* BaseViewController.swift */; };
 		A572589A1C499DE30020B168 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57258991C499DE30020B168 /* UIColorExtension.swift */; };
-		A5FAA3DF1C4C3E29004A3059 /* AWSegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FAA3DE1C4C3E29004A3059 /* AWSegmentedControlView.swift */; };
 		A5FAA3E11C4C47C2004A3059 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FAA3E01C4C47C2004A3059 /* UIViewExtension.swift */; };
 		A5FAA3E31C4C4CD6004A3059 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FAA3E21C4C4CD6004A3059 /* UIViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
@@ -49,13 +51,16 @@
 
 /* Begin PBXFileReference section */
 		09F42AC60706AD4F8FF5245E /* Pods-MentorAndMentees.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MentorAndMentees.release.xcconfig"; path = "Pods/Target Support Files/Pods-MentorAndMentees/Pods-MentorAndMentees.release.xcconfig"; sourceTree = "<group>"; };
+		A5280FAB1C652E66004E38C8 /* MentorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MentorButton.swift; path = Components/MentorButton.swift; sourceTree = "<group>"; };
+		A5280FB01C65320D004E38C8 /* BaseKeyboardNotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseKeyboardNotificationViewController.swift; path = Controllers/BaseKeyboardNotificationViewController.swift; sourceTree = "<group>"; };
+		A52C51171C76341500B8DC02 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = Controllers/Signup/SignupViewController.swift; sourceTree = "<group>"; };
+		A52C51191C76344200B8DC02 /* SignupEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupEmailViewController.swift; path = Controllers/Signup/SignupEmailViewController.swift; sourceTree = "<group>"; };
 		A54C80701C500F7000097A2C /* GroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupsViewController.swift; path = Controllers/GroupsViewController.swift; sourceTree = "<group>"; };
 		A54C80731C50124F00097A2C /* GroupItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupItemCollectionViewCell.swift; path = Views/GroupItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		A566CED21C4ADF20005E1FE7 /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
 		A566CED31C4ADF20005E1FE7 /* TextFieldEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldEffects.h; sourceTree = "<group>"; };
 		A566CED41C4ADF20005E1FE7 /* TextFieldsEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldsEffects.swift; sourceTree = "<group>"; };
 		A566CED71C4AE02E005E1FE7 /* SpringTextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpringTextFieldExtension.swift; path = Extensions/SpringTextFieldExtension.swift; sourceTree = "<group>"; };
-		A566CEDB1C4BA4B6005E1FE7 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = Controllers/SignupViewController.swift; sourceTree = "<group>"; };
 		A566CEE21C4BA548005E1FE7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A566CEE41C4BA54D005E1FE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A566CEE91C4BA67D005E1FE7 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Utils/Utils.swift; sourceTree = "<group>"; };
@@ -73,7 +78,6 @@
 		A57258911C4982B60020B168 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Storyboards/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A57258941C499D0D0020B168 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Controllers/BaseViewController.swift; sourceTree = "<group>"; };
 		A57258991C499DE30020B168 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtension.swift; path = Extensions/UIColorExtension.swift; sourceTree = "<group>"; };
-		A5FAA3DE1C4C3E29004A3059 /* AWSegmentedControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSegmentedControlView.swift; sourceTree = "<group>"; };
 		A5FAA3E01C4C47C2004A3059 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = Extensions/UIViewExtension.swift; sourceTree = "<group>"; };
 		A5FAA3E21C4C4CD6004A3059 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = Extensions/UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		DC89D73CC2F74D5AA3419866 /* Pods-MentorAndMentees.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MentorAndMentees.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MentorAndMentees/Pods-MentorAndMentees.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +125,15 @@
 				09F42AC60706AD4F8FF5245E /* Pods-MentorAndMentees.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A52C51161C7633D200B8DC02 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				A52C51191C76344200B8DC02 /* SignupEmailViewController.swift */,
+				A52C51171C76341500B8DC02 /* SignupViewController.swift */,
+			);
+			name = Signup;
 			sourceTree = "<group>";
 		};
 		A54C80721C50122600097A2C /* Views */ = {
@@ -227,10 +240,11 @@
 		A572588C1C4981AD0020B168 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A52C51161C7633D200B8DC02 /* Signup */,
 				A57258601C49789C0020B168 /* LoginViewController.swift */,
 				A57258941C499D0D0020B168 /* BaseViewController.swift */,
-				A566CEDB1C4BA4B6005E1FE7 /* SignupViewController.swift */,
 				A54C80701C500F7000097A2C /* GroupsViewController.swift */,
+				A5280FB01C65320D004E38C8 /* BaseKeyboardNotificationViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -273,7 +287,7 @@
 		A5FAA3DD1C4C3E1A004A3059 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				A5FAA3DE1C4C3E29004A3059 /* AWSegmentedControlView.swift */,
+				A5280FAB1C652E66004E38C8 /* MentorButton.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -463,15 +477,17 @@
 			files = (
 				A57258611C49789C0020B168 /* LoginViewController.swift in Sources */,
 				A54C80741C50124F00097A2C /* GroupItemCollectionViewCell.swift in Sources */,
-				A5FAA3DF1C4C3E29004A3059 /* AWSegmentedControlView.swift in Sources */,
 				A5FAA3E11C4C47C2004A3059 /* UIViewExtension.swift in Sources */,
 				A572589A1C499DE30020B168 /* UIColorExtension.swift in Sources */,
 				A566CEEA1C4BA67D005E1FE7 /* Utils.swift in Sources */,
 				A54C80711C500F7000097A2C /* GroupsViewController.swift in Sources */,
-				A566CEDC1C4BA4B6005E1FE7 /* SignupViewController.swift in Sources */,
 				A572585F1C49789C0020B168 /* AppDelegate.swift in Sources */,
 				A57258951C499D0D0020B168 /* BaseViewController.swift in Sources */,
+				A5280FB11C65320D004E38C8 /* BaseKeyboardNotificationViewController.swift in Sources */,
+				A52C511A1C76344200B8DC02 /* SignupEmailViewController.swift in Sources */,
+				A52C51181C76341500B8DC02 /* SignupViewController.swift in Sources */,
 				A5FAA3E31C4C4CD6004A3059 /* UIViewControllerExtension.swift in Sources */,
+				A5280FAD1C652E66004E38C8 /* MentorButton.swift in Sources */,
 				A566CED81C4AE02E005E1FE7 /* SpringTextFieldExtension.swift in Sources */,
 				A566CED61C4ADF20005E1FE7 /* TextFieldsEffects.swift in Sources */,
 				A566CED51C4ADF20005E1FE7 /* HoshiTextField.swift in Sources */,

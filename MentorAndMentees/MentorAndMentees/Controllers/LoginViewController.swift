@@ -10,7 +10,7 @@ import UIKit
 import TextFieldEffects
 import Spring
 
-class LoginViewController: BaseViewController {
+class LoginViewController: BaseKeyboardNotificationViewController {
   
   // MARK: - Properties -
   
@@ -49,7 +49,7 @@ class LoginViewController: BaseViewController {
   @IBOutlet weak var resetPasswordButton: UIButton! {
     didSet {
       resetPasswordButton.setTitle(Localizable("Reset your password"), forState: .Normal)
-
+      
       // to underline the reset button
       let attributes                                 = [NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue]
       let attributedText                             = NSAttributedString(string: resetPasswordButton.currentTitle!, attributes: attributes)
@@ -67,15 +67,18 @@ class LoginViewController: BaseViewController {
     super.viewDidLoad()
     
     self.title = Localizable("Log in")
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
     
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShowOrHide:", name: UIKeyboardWillShowNotification, object: nil)
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShowOrHide:", name: UIKeyboardWillHideNotification, object: nil)
+    emailTextField.becomeFirstResponder()
   }
   
   // MARK: - User interaction -
   
   @IBAction func login(sender: AnyObject) {
-
+    
   }
   
   @IBAction func showOrHidePassword(sender: AnyObject) {
@@ -84,41 +87,13 @@ class LoginViewController: BaseViewController {
   }
 }
 
-// MARK: - UITextField Delegate -
-
-extension LoginViewController: UITextFieldDelegate {
-  func textFieldShouldReturn(textField: UITextField) -> Bool {
-    textField.resignFirstResponder()
-    return true
-  }
-}
-
 // MARK: - UIKeyboard Notification -
 
 extension LoginViewController {
-  
-  private struct ButtonProperties {
-    static let margin: CGFloat = 10.0
-  }
-  
-  func keyboardWillShowOrHide(notification: NSNotification) {
-    let keyboardBeginFrame = (notification.userInfo![UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
-    let keyboardEndFrame = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
-    
-    // IF the keyboard is moving
-    if keyboardBeginFrame != keyboardEndFrame {
-      
-      /*
-        If the login button is not on top of keyboard ( loginButton.frame.minY > keyboardEndFrame.minY  ), we put it above
-        Else, we put it on the bottom of the view ( `margin` from the bottom )
-      */
-      let constantBottom: CGFloat = loginButton.frame.minY > keyboardEndFrame.minY ? keyboardEndFrame.height + ButtonProperties.margin : ButtonProperties.margin
-
-      UIView.animateWithDuration(0.5, animations: {
-        self.loginButtonBottomConstraint.constant         = constantBottom;
-        self.resetPasswordButtonBottomConstraint.constant = constantBottom;
-        self.view.layoutIfNeeded()
-        }, completion: nil)
-    }
+  func keyboardWillShow(notification: NSNotification) {
+    let keyboardEndFrame                              = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+    let constantBottom: CGFloat                       = keyboardEndFrame.height + ButtonProperties.margin
+    self.loginButtonBottomConstraint.constant         = constantBottom
+    self.resetPasswordButtonBottomConstraint.constant = constantBottom
   }
 }
