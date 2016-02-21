@@ -8,10 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		23AA0228838ED7A554543090 /* Pods_MentorAndMentees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA368650A539C2E5FCADA728 /* Pods_MentorAndMentees.framework */; };
+		A5275D561C7A30DB0049D60A /* AWLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5275D551C7A30DB0049D60A /* AWLoader.swift */; };
 		A5280FAD1C652E66004E38C8 /* MentorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5280FAB1C652E66004E38C8 /* MentorButton.swift */; };
 		A5280FB11C65320D004E38C8 /* BaseKeyboardNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5280FB01C65320D004E38C8 /* BaseKeyboardNotificationViewController.swift */; };
 		A52C51181C76341500B8DC02 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52C51171C76341500B8DC02 /* SignupViewController.swift */; };
 		A52C511A1C76344200B8DC02 /* SignupEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52C51191C76344200B8DC02 /* SignupEmailViewController.swift */; };
+		A52C51231C76707A00B8DC02 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52C511F1C76707A00B8DC02 /* Fabric.framework */; };
+		A52C51241C76707A00B8DC02 /* DigitsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52C51201C76707A00B8DC02 /* DigitsKit.framework */; };
+		A52C51251C76707A00B8DC02 /* DigitsKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A52C51211C76707A00B8DC02 /* DigitsKitResources.bundle */; };
+		A52C51261C76707A00B8DC02 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52C51221C76707A00B8DC02 /* TwitterCore.framework */; };
 		A54C80711C500F7000097A2C /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C80701C500F7000097A2C /* GroupsViewController.swift */; };
 		A54C80741C50124F00097A2C /* GroupItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C80731C50124F00097A2C /* GroupItemCollectionViewCell.swift */; };
 		A566CED51C4ADF20005E1FE7 /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566CED21C4ADF20005E1FE7 /* HoshiTextField.swift */; };
@@ -28,6 +33,8 @@
 		A57258931C4983C30020B168 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A572586A1C49789C0020B168 /* Info.plist */; };
 		A57258951C499D0D0020B168 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57258941C499D0D0020B168 /* BaseViewController.swift */; };
 		A572589A1C499DE30020B168 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57258991C499DE30020B168 /* UIColorExtension.swift */; };
+		A5B52CEC1C79DBE200A34036 /* DigitsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B52CEB1C79DBE200A34036 /* DigitsManager.swift */; };
+		A5B52CEE1C79DFC500A34036 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B52CED1C79DFC500A34036 /* PersistencyManager.swift */; };
 		A5FAA3E11C4C47C2004A3059 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FAA3E01C4C47C2004A3059 /* UIViewExtension.swift */; };
 		A5FAA3E31C4C4CD6004A3059 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FAA3E21C4C4CD6004A3059 /* UIViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
@@ -51,10 +58,15 @@
 
 /* Begin PBXFileReference section */
 		09F42AC60706AD4F8FF5245E /* Pods-MentorAndMentees.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MentorAndMentees.release.xcconfig"; path = "Pods/Target Support Files/Pods-MentorAndMentees/Pods-MentorAndMentees.release.xcconfig"; sourceTree = "<group>"; };
+		A5275D551C7A30DB0049D60A /* AWLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWLoader.swift; sourceTree = "<group>"; };
 		A5280FAB1C652E66004E38C8 /* MentorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MentorButton.swift; path = Components/MentorButton.swift; sourceTree = "<group>"; };
 		A5280FB01C65320D004E38C8 /* BaseKeyboardNotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseKeyboardNotificationViewController.swift; path = Controllers/BaseKeyboardNotificationViewController.swift; sourceTree = "<group>"; };
 		A52C51171C76341500B8DC02 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = Controllers/Signup/SignupViewController.swift; sourceTree = "<group>"; };
 		A52C51191C76344200B8DC02 /* SignupEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupEmailViewController.swift; path = Controllers/Signup/SignupEmailViewController.swift; sourceTree = "<group>"; };
+		A52C511F1C76707A00B8DC02 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = MentorAndMentees/Fabric.framework; sourceTree = "<group>"; };
+		A52C51201C76707A00B8DC02 /* DigitsKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DigitsKit.framework; path = MentorAndMentees/DigitsKit.framework; sourceTree = "<group>"; };
+		A52C51211C76707A00B8DC02 /* DigitsKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DigitsKitResources.bundle; path = MentorAndMentees/DigitsKitResources.bundle; sourceTree = "<group>"; };
+		A52C51221C76707A00B8DC02 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterCore.framework; path = MentorAndMentees/TwitterCore.framework; sourceTree = "<group>"; };
 		A54C80701C500F7000097A2C /* GroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupsViewController.swift; path = Controllers/GroupsViewController.swift; sourceTree = "<group>"; };
 		A54C80731C50124F00097A2C /* GroupItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupItemCollectionViewCell.swift; path = Views/GroupItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		A566CED21C4ADF20005E1FE7 /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
@@ -78,6 +90,8 @@
 		A57258911C4982B60020B168 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Storyboards/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A57258941C499D0D0020B168 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Controllers/BaseViewController.swift; sourceTree = "<group>"; };
 		A57258991C499DE30020B168 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtension.swift; path = Extensions/UIColorExtension.swift; sourceTree = "<group>"; };
+		A5B52CEB1C79DBE200A34036 /* DigitsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DigitsManager.swift; path = Managers/DigitsManager.swift; sourceTree = "<group>"; };
+		A5B52CED1C79DFC500A34036 /* PersistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistencyManager.swift; path = Managers/PersistencyManager.swift; sourceTree = "<group>"; };
 		A5FAA3E01C4C47C2004A3059 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = Extensions/UIViewExtension.swift; sourceTree = "<group>"; };
 		A5FAA3E21C4C4CD6004A3059 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = Extensions/UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		DC89D73CC2F74D5AA3419866 /* Pods-MentorAndMentees.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MentorAndMentees.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MentorAndMentees/Pods-MentorAndMentees.debug.xcconfig"; sourceTree = "<group>"; };
@@ -89,7 +103,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A52C51241C76707A00B8DC02 /* DigitsKit.framework in Frameworks */,
+				A52C51261C76707A00B8DC02 /* TwitterCore.framework in Frameworks */,
 				23AA0228838ED7A554543090 /* Pods_MentorAndMentees.framework in Frameworks */,
+				A52C51231C76707A00B8DC02 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +138,11 @@
 		7D1DADBD730F7DF23D525D5A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				A52C511F1C76707A00B8DC02 /* Fabric.framework */,
+				A52C51201C76707A00B8DC02 /* DigitsKit.framework */,
+				A52C51211C76707A00B8DC02 /* DigitsKitResources.bundle */,
+				A52C51221C76707A00B8DC02 /* TwitterCore.framework */,
+				77A6F1C031CD0720A8D9F541 /* Frameworks */,
 				DC89D73CC2F74D5AA3419866 /* Pods-MentorAndMentees.debug.xcconfig */,
 				09F42AC60706AD4F8FF5245E /* Pods-MentorAndMentees.release.xcconfig */,
 			);
@@ -158,6 +180,7 @@
 		A566CEDA1C4AE06A005E1FE7 /* Librairies */ = {
 			isa = PBXGroup;
 			children = (
+				A5275D551C7A30DB0049D60A /* AWLoader.swift */,
 				A566CED11C4ADF09005E1FE7 /* HoshiTextField */,
 			);
 			name = Librairies;
@@ -187,7 +210,6 @@
 				A572587D1C49789C0020B168 /* MentorAndMenteesUITests */,
 				A572585C1C49789C0020B168 /* Products */,
 				7D1DADBD730F7DF23D525D5A /* Pods */,
-				77A6F1C031CD0720A8D9F541 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -214,6 +236,7 @@
 				A566CEDA1C4AE06A005E1FE7 /* Librairies */,
 				A566CEDE1C4BA51B005E1FE7 /* Localizables */,
 				A572588E1C4981D70020B168 /* Assets */,
+				A5B52CEA1C79DBBC00A34036 /* Managers */,
 				A572588F1C49822B0020B168 /* Properties */,
 			);
 			path = MentorAndMentees;
@@ -284,6 +307,15 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		A5B52CEA1C79DBBC00A34036 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A5B52CEB1C79DBE200A34036 /* DigitsManager.swift */,
+				A5B52CED1C79DFC500A34036 /* PersistencyManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
 		A5FAA3DD1C4C3E1A004A3059 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +337,8 @@
 				A57258591C49789C0020B168 /* Resources */,
 				2E8470E3A5BBA2758359437C /* Embed Pods Frameworks */,
 				9CA720B5D6BDBAFE892FC64C /* Copy Pods Resources */,
+				A52C511E1C766F9800B8DC02 /* Digits */,
+				A5B52CF11C79EF1300A34036 /* Warning and erros on TODO/FIXME/ERROR */,
 			);
 			buildRules = (
 			);
@@ -399,6 +433,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A52C51251C76707A00B8DC02 /* DigitsKitResources.bundle in Resources */,
 				A57258931C4983C30020B168 /* Info.plist in Resources */,
 				A566CEE11C4BA548005E1FE7 /* Localizable.strings in Resources */,
 				A57258921C4982B60020B168 /* Main.storyboard in Resources */,
@@ -468,6 +503,34 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MentorAndMentees/Pods-MentorAndMentees-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A52C511E1C766F9800B8DC02 /* Digits */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Digits;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run d615a1d619be424ae949de1abd75c884d5a6cc9b 96bfb9135d284d7ba9ee737d2c3a686986fb25853ef909f8ef0f4fc53fd10b28";
+		};
+		A5B52CF11C79EF1300A34036 /* Warning and erros on TODO/FIXME/ERROR */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Warning and erros on TODO/FIXME/ERROR";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"TODO:|FIXME:\"\nERRORTAG=\"ERROR:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$|($ERRORTAG).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\" | perl -p -e \"s/($ERRORTAG)/ error: \\$1/\"";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -486,10 +549,13 @@
 				A5280FB11C65320D004E38C8 /* BaseKeyboardNotificationViewController.swift in Sources */,
 				A52C511A1C76344200B8DC02 /* SignupEmailViewController.swift in Sources */,
 				A52C51181C76341500B8DC02 /* SignupViewController.swift in Sources */,
+				A5275D561C7A30DB0049D60A /* AWLoader.swift in Sources */,
 				A5FAA3E31C4C4CD6004A3059 /* UIViewControllerExtension.swift in Sources */,
 				A5280FAD1C652E66004E38C8 /* MentorButton.swift in Sources */,
+				A5B52CEE1C79DFC500A34036 /* PersistencyManager.swift in Sources */,
 				A566CED81C4AE02E005E1FE7 /* SpringTextFieldExtension.swift in Sources */,
 				A566CED61C4ADF20005E1FE7 /* TextFieldsEffects.swift in Sources */,
+				A5B52CEC1C79DBE200A34036 /* DigitsManager.swift in Sources */,
 				A566CED51C4ADF20005E1FE7 /* HoshiTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -635,6 +701,10 @@
 			baseConfigurationReference = DC89D73CC2F74D5AA3419866 /* Pods-MentorAndMentees.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MentorAndMentees",
+				);
 				INFOPLIST_FILE = MentorAndMentees/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mentorandmentees.MentorAndMentees;
@@ -647,6 +717,10 @@
 			baseConfigurationReference = 09F42AC60706AD4F8FF5245E /* Pods-MentorAndMentees.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MentorAndMentees",
+				);
 				INFOPLIST_FILE = MentorAndMentees/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mentorandmentees.MentorAndMentees;
