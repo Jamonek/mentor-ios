@@ -20,6 +20,25 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>d615a1d619be424ae949de1abd75c884d5a6cc9b</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict>
+					<key>consumerKey</key>
+					<string>dEhrUEnxez9jnkmo4LTvr2qCP</string>
+					<key>consumerSecret</key>
+					<string>9OeApfy65gx0omAWGRYdC1RGFn0vMGu51lIsun3UmDxUAjRSgc</string>
+				</dict>
+				<key>KitName</key>
+				<string>Digits</string>
+			</dict>
+		</array>
+	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

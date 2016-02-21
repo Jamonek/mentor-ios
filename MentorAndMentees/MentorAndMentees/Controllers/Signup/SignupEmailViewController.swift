@@ -8,10 +8,15 @@
 
 import UIKit
 import Spring
+import Fabric
+import DigitsKit
 
 class SignupEmailViewController: BaseKeyboardNotificationViewController {
   
   // MARK: - Properties -
+  
+  var profilePicture: UIImage?
+  var fullName: String!
   
   @IBOutlet weak var emailTitleLabel: UILabel! {
     didSet {
@@ -63,6 +68,33 @@ class SignupEmailViewController: BaseKeyboardNotificationViewController {
   func isEmailValid(email: String) -> Bool {
     let regex = Regex.email
     return NSPredicate(format: "SELF MATCHES %@", regex).evaluateWithObject(email)
+  }
+  
+  // MARK: - User Interaction -
+  
+  @IBAction func showNumberVerificationWithDigits(sender: AnyObject) {
+    if Digits.sharedInstance().session() == nil {
+      DigitsManager.loginWithTitle(Localizable("Mehe - User Verification")) { (session, error) in
+        guard error == nil else { return }
+        
+        // TODO: - Signup request
+        // TODO: - Persistency of the email
+        self.performSegueWithIdentifier("goToGroupsList", sender: self)
+      }
+      
+    // We logged in the user with a phone number but the user is not registered
+    } else {
+      
+      // TODO: - Signup request with phoneNumber ( Digits session ), email, fullName, profilePicture
+      // TODO: - Persistency of the email
+      emailSpringTextField.resignFirstResponder()
+      AWLoader.show(blurStyle: .Dark)
+      dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * NSEC_PER_SEC)), dispatch_get_main_queue()) {
+        AWLoader.hide()
+        self.performSegueWithIdentifier("goToGroupsList", sender: self)
+      }
+
+    }
   }
 }
 

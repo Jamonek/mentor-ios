@@ -13,6 +13,8 @@ class SignupViewController:  BaseKeyboardNotificationViewController {
   
   // MARK: - Properties -
   
+  var profilePicture: UIImage?
+  
   @IBOutlet weak var signupTitleLabel: UILabel! {
     didSet {
       signupTitleLabel.text = Localizable("Sign up")
@@ -66,6 +68,13 @@ class SignupViewController:  BaseKeyboardNotificationViewController {
     fullNameSpringTextField.becomeFirstResponder()
   }
   
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if let signupEmailController = segue.destinationViewController as? SignupEmailViewController {
+      signupEmailController.fullName = fullNameSpringTextField.text!
+      signupEmailController.profilePicture = profilePicture
+    }
+  }
+  
   // MARK: - User Interaction -
   
   @IBAction func showImagePicker(sender: AnyObject) {
@@ -79,6 +88,7 @@ extension SignupViewController: UIImagePickerControllerDelegate, UINavigationCon
   func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
     picker.dismissViewControllerAnimated(true) {
       self.profilePictureImage.image = image
+      self.profilePicture = image
     }
   }
   
