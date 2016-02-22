@@ -9,6 +9,7 @@
 import UIKit
 import TextFieldEffects
 import Spring
+import DigitsKit
 
 class LoginViewController: BaseViewController {
   
@@ -20,46 +21,28 @@ class LoginViewController: BaseViewController {
     }
   }
   
-  @IBOutlet weak var emailTextField: HoshiTextField! {
+  @IBOutlet weak var signupButton: MentorButton! {
     didSet {
-      emailTextField.placeholder = Localizable("Email").uppercaseString
-    }
-  }
-  
-  @IBOutlet weak var passwordTextField: HoshiTextField!  {
-    didSet {
-      passwordTextField.placeholder = Localizable("Password").uppercaseString
-    }
-  }
-  
-  @IBOutlet weak var loginButton: UIButton! {
-    didSet {
-      loginButton.layer.cornerRadius = 3.0
-      loginButton.setTitle(Localizable("Log in"), forState: .Normal)
-    }
-  }
-  
-  @IBOutlet weak var signupButton: UIButton! {
-    didSet {
-      signupButton.layer.cornerRadius = 3.0
       signupButton.setTitle(Localizable("Sign up"), forState: .Normal)
+      signupButton.layer.cornerRadius = 6.0
     }
   }
   
-  @IBOutlet weak var resetPasswordButton: UIButton! {
+  @IBOutlet weak var loginButton: MentorButton! {
     didSet {
-      resetPasswordButton.setTitle(Localizable("Reset your password"), forState: .Normal)
-
-      // to underline the reset button
-      let attributes                                 = [NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue]
-      let attributedText                             = NSAttributedString(string: resetPasswordButton.currentTitle!, attributes: attributes)
-      resetPasswordButton.titleLabel!.attributedText = attributedText
+      loginButton.setTitle(Localizable("Log in with my phone number"), forState: .Normal)
+      loginButton.layer.cornerRadius = 6.0
     }
   }
   
-  @IBOutlet weak var showPasswordButton: UIButton!
-  @IBOutlet weak var loginButtonBottomConstraint: NSLayoutConstraint!
-  @IBOutlet weak var resetPasswordButtonBottomConstraint: NSLayoutConstraint!
+  @IBOutlet weak var loginWithPhoneNumberButton: UIButton! {
+    didSet {
+      // to underline the button
+      let attributes                                 = [NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue]
+      let attributedText                             = NSAttributedString(string: Localizable("Log in with my phone number"), attributes: attributes)
+      loginWithPhoneNumberButton.setAttributedTitle(attributedText, forState: .Normal)
+    }
+  }
   
   // MARK: - Lifecycle -
   
@@ -67,58 +50,29 @@ class LoginViewController: BaseViewController {
     super.viewDidLoad()
     
     self.title = Localizable("Log in")
-    
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShowOrHide:", name: UIKeyboardWillShowNotification, object: nil)
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShowOrHide:", name: UIKeyboardWillHideNotification, object: nil)
   }
   
   // MARK: - User interaction -
-  
-  @IBAction func login(sender: AnyObject) {
 
-  }
-  
-  @IBAction func showOrHidePassword(sender: AnyObject) {
-    passwordTextField.secureTextEntry = !passwordTextField.secureTextEntry
-    showPasswordButton.selected       = !showPasswordButton.selected
-  }
-}
-
-// MARK: - UITextField Delegate -
-
-extension LoginViewController: UITextFieldDelegate {
-  func textFieldShouldReturn(textField: UITextField) -> Bool {
-    textField.resignFirstResponder()
-    return true
-  }
-}
-
-// MARK: - UIKeyboard Notification -
-
-extension LoginViewController {
-  
-  private struct ButtonProperties {
-    static let margin: CGFloat = 10.0
-  }
-  
-  func keyboardWillShowOrHide(notification: NSNotification) {
-    let keyboardBeginFrame = (notification.userInfo![UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
-    let keyboardEndFrame = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
-    
-    // IF the keyboard is moving
-    if keyboardBeginFrame != keyboardEndFrame {
+  @IBAction func loginWithDigits(sender: AnyObject) {
+    DigitsManager.loginWithTitle(Localizable("Mehe - Login")) { (session, error) in
+      guard error == nil else { return }
       
-      /*
-        If the login button is not on top of keyboard ( loginButton.frame.minY > keyboardEndFrame.minY  ), we put it above
-        Else, we put it on the bottom of the view ( `margin` from the bottom )
-      */
-      let constantBottom: CGFloat = loginButton.frame.minY > keyboardEndFrame.minY ? keyboardEndFrame.height + ButtonProperties.margin : ButtonProperties.margin
+      // If we are here, that means we have verified the user number 
+      // TODO: - Check if the phone number is registered into the database
+      let isPhoneNumberRegistered = false
+      
+      if isPhoneNumberRegistered {
+        // TODO: - Fetch the user email from the dabatase and persist it
+        AWLoader.show(blurStyle: .Dark)
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * NSEC_PER_SEC)), dispatch_get_main_queue()) {
+          AWLoader.hide()
+          self.performSegueWithIdentifier("showGroupsViewController", sender: self)
+        }
+      } else {
+        self.performSegueWithIdentifier("showSignupView", sender: self)
+      }
 
-      UIView.animateWithDuration(0.5, animations: {
-        self.loginButtonBottomConstraint.constant         = constantBottom;
-        self.resetPasswordButtonBottomConstraint.constant = constantBottom;
-        self.view.layoutIfNeeded()
-        }, completion: nil)
     }
   }
 }

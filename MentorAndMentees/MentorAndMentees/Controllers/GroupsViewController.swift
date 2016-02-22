@@ -24,8 +24,50 @@ class GroupsViewController: BaseViewController {
     }
   }
   
+  var searchBar: UISearchBar = {
+    let searchBar = UISearchBar()
+    searchBar.tintColor = UIColor.mentorSkyBlueColor()
+    searchBar.placeholder = Localizable("Search")
+    return searchBar
+  }()
+  
   @IBOutlet weak var groupsCollectionView: UICollectionView!
+  
+  // MARK: - Lifecycle -
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    searchBar.delegate = self
+    groupsCollectionView.addSubview(searchBar)
+
+    // To remote the defaut space between the collection top and its top
+    automaticallyAdjustsScrollViewInsets = false
+    
+    // To hide the search bar until the user scrolls ( like the Apple Mail app behavior )
+    groupsCollectionView.contentOffset = CGPoint(x: 0, y: 44)
+  }
+  
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    searchBar.frame = CGRect(x: 0, y: 0, width: groupsCollectionView.bounds.width, height: 44.0)
+  }
 }
+
+// MARK: - UISearchBar Delegate -
+
+extension GroupsViewController: UISearchBarDelegate {
+  func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool {
+    searchBar.setShowsCancelButton(true, animated: true)
+    return true
+  }
+  
+  func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+    searchBar.resignFirstResponder()
+    searchBar.setShowsCancelButton(false, animated: true)
+  }
+}
+
 
 // MARK: - UICollectionView Data source -
 

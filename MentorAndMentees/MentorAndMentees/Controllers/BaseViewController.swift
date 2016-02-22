@@ -26,11 +26,5 @@ class BaseViewController: UIViewController {
     
     self.view.backgroundColor = UIColor.mentorGreyBackgroundColor()
   }
-  
-  // MARK: - Gesture events -
-  
-  // Called when the user touch a point anywhere on the screen
-  override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-    view.endEditing(true)
-  }
 }
+
