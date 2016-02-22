@@ -18,12 +18,6 @@ class GroupsViewController: BaseViewController {
     }
   }
   
-  @IBOutlet weak var searchGroupTextField: UITextField! {
-    didSet {
-      searchGroupTextField.placeholder = Localizable("Search")
-    }
-  }
-  
   var searchBar: UISearchBar = {
     let searchBar = UISearchBar()
     searchBar.tintColor = UIColor.mentorSkyBlueColor()
