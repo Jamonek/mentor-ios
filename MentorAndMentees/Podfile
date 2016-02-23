@@ -3,7 +3,7 @@
 
 use_frameworks!
 
-target 'MentorAndMentees' do
+target 'Mehe' do
 
 pod 'AlamofireObjectMapper', '~> 2.1'
 pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
