@@ -342,6 +342,7 @@
 				A5B52CF11C79EF1300A34036 /* Warning and erros on TODO/FIXME/ERROR */,
 				7CB63799F68DED12C46C5DE5 /* Embed Pods Frameworks */,
 				B91D185C8BED573E7FBAEB25 /* Copy Pods Resources */,
+				64F413401C7C318F00B34B01 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -400,6 +401,7 @@
 				TargetAttributes = {
 					A572585A1C49789C0020B168 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = W29D5BE398;
 					};
 					A572586E1C49789C0020B168 = {
 						CreatedOnToolsVersion = 7.2;
@@ -461,6 +463,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		64F413401C7C318F00B34B01 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" e5fb859afb8f689099c546a9b31c3e905f93d66f 560e2d984cac01ec56d2fed0b805b236fa6b433e55b559703211042d10ad3260";
+		};
 		7CB63799F68DED12C46C5DE5 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -704,6 +719,8 @@
 			baseConfigurationReference = F45D73461E9F5D57B5F32239 /* Pods-Mehe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MentorAndMentees",
@@ -720,6 +737,7 @@
 			baseConfigurationReference = F4F7DCD6FEA363FE784508A9 /* Pods-Mehe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MentorAndMentees",
