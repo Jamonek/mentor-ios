@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  MentorAndMentees
+
+  Created by Rebouh Aymen on 17/01/2016.
+  Copyright © 2016 Mentor And Mentees. All rights reserved.
+*/
+
+"Log in"                      = "Log in";
+"Sign up"                     = "Sign up";
+"Groups"                      = "Groupes";
+"Search"                      = "Search";
+"Email"                       = "Email";
+"Password"                    = "Password";
+"Log in with my phone number" = "Log in with my phone number";
+"Delete"                      = "Delete";
+"Rename"                      = "Rename";
+"More"                        = "More";
+"Full name"                   = "Full name";
+"Birthday"                    = "Birthday";
+"Mentor"                      = "Mentor";
+"Mentee"                      = "Mentee";
+"Use of email"                = "When you create or join a group, this is what identify you.";
