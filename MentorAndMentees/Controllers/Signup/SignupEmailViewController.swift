@@ -33,7 +33,7 @@ class SignupEmailViewController: BaseKeyboardNotificationViewController {
   
   @IBOutlet weak var nextButton: MentorButton! {
     didSet {
-      nextButton.setTitle(Localizable("Next"), forState: .Normal)
+      nextButton.setTitle(Localizable("Next"), for: UIControlState())
     }
   }
   
@@ -54,7 +54,7 @@ class SignupEmailViewController: BaseKeyboardNotificationViewController {
   
   // MARK: - Lifecycle -
   
-  override func viewWillAppear(animated: Bool) {
+  override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
     emailSpringTextField.becomeFirstResponder()
@@ -62,18 +62,18 @@ class SignupEmailViewController: BaseKeyboardNotificationViewController {
   
   // MARK: - Fields Validation -
   
-  private struct Regex {
+  fileprivate struct Regex {
     static let email = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
   }
   
-  func isEmailValid(email: String) -> Bool {
+  func isEmailValid(_ email: String) -> Bool {
     let regex = Regex.email
-    return NSPredicate(format: "SELF MATCHES %@", regex).evaluateWithObject(email)
+    return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: email)
   }
   
   // MARK: - User Interaction -
   
-  @IBAction func showNumberVerificationWithDigits(sender: AnyObject) {
+  @IBAction func showNumberVerificationWithDigits(_ sender: AnyObject) {
     if Digits.sharedInstance().session() == nil {
       DigitsManager.loginWithTitle(Localizable("Mehe - User Verification")) { (session, error) in
         guard error == nil else { return }
@@ -90,11 +90,11 @@ class SignupEmailViewController: BaseKeyboardNotificationViewController {
         print("Mehe name: \(self.fullName)")
         let digit = Digits.sharedInstance()
         let oauthSigning = DGTOAuthSigning(authConfig:digit.authConfig, authSession:digit.session())
-        let authHeaders = oauthSigning.OAuthEchoHeadersToVerifyCredentials()
+        let authHeaders = oauthSigning.oAuthEchoHeadersToVerifyCredentials()
         print("X-Auth-Service-Provider: \(authHeaders["X-Auth-Service-Provider"])")
         print("X-Verify-Credentials-Authorization: \(authHeaders["X-Verify-Credentials-Authorization"])")
         print("Auth header: \(authHeaders)")
-        self.performSegueWithIdentifier("goToGroupsList", sender: self)
+        self.performSegue(withIdentifier: "goToGroupsList", sender: self)
       }
       
     // We logged in the user with a phone number but the user is not registered
@@ -111,16 +111,16 @@ class SignupEmailViewController: BaseKeyboardNotificationViewController {
         print("Mehe name: \(fullName)")
         let digit = Digits.sharedInstance()
         let oauthSigning = DGTOAuthSigning(authConfig:digit.authConfig, authSession:digit.session())
-        let authHeaders = oauthSigning.OAuthEchoHeadersToVerifyCredentials()
-        print("X-Auth-Service-Provider: \(authHeaders["X-Auth-Service-Provider"])")
-        print("X-Verify-Credentials-Authorization: \(authHeaders["X-Verify-Credentials-Authorization"])")
+        let authHeaders = oauthSigning?.oAuthEchoHeadersToVerifyCredentials()
+        print("X-Auth-Service-Provider: \(authHeaders?["X-Auth-Service-Provider"])")
+        print("X-Verify-Credentials-Authorization: \(authHeaders?["X-Verify-Credentials-Authorization"])")
         UserManager.credCheck(authHeaders)
         print("Auth header: \(authHeaders)")
       emailSpringTextField.resignFirstResponder()
-      AWLoader.show(blurStyle: .Dark)
-      dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * NSEC_PER_SEC)), dispatch_get_main_queue()) {
+      AWLoader.show(blurStyle: .dark)
+      DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(2 * NSEC_PER_SEC)) / Double(NSEC_PER_SEC)) {
         AWLoader.hide()
-        self.performSegueWithIdentifier("goToGroupsList", sender: self)
+        self.performSegue(withIdentifier: "goToGroupsList", sender: self)
       }
 
     }
@@ -131,16 +131,16 @@ class SignupEmailViewController: BaseKeyboardNotificationViewController {
 // MARK: - UITextField Delegate -
 
 extension SignupEmailViewController: UITextFieldDelegate {
-  func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+  func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
     
-    let email = (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString: string)
-    nextButton.enabled = isEmailValid(email)
+    let email = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+    nextButton.isEnabled = isEmailValid(email)
     
     return true
   }
   
-  func textFieldShouldClear(textField: UITextField) -> Bool {
-    nextButton.enabled = false
+  func textFieldShouldClear(_ textField: UITextField) -> Bool {
+    nextButton.isEnabled = false
     return true
   }
 }
@@ -150,8 +150,8 @@ extension SignupEmailViewController: UITextFieldDelegate {
 
 extension SignupEmailViewController {
   
-  func keyboardWillShow(notification: NSNotification) {
-    let keyboardEndFrame                     = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+  func keyboardWillShow(_ notification: Notification) {
+    let keyboardEndFrame                     = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
     let constantBottom: CGFloat              = keyboardEndFrame.height + ButtonProperties.margin
     self.nextButtonBottomConstraint.constant = constantBottom
     self.backButtonBottomConstraint.constant = constantBottom

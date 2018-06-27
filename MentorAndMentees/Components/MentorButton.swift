@@ -10,12 +10,12 @@ import UIKit
 
 class MentorButton: UIButton {
 
-  override var enabled: Bool {
+  override var isEnabled: Bool {
     didSet {
-      if enabled {
+      if isEnabled {
         backgroundColor = UIColor.mentorSkyBlueColor()
       } else {
-        backgroundColor = UIColor.lightGrayColor()
+        backgroundColor = UIColor.lightGray
       }
     }
   }

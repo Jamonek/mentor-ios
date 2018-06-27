@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - Localizable -
 
-func Localizable(key: String) -> String {
+func Localizable(_ key: String) -> String {
   return NSLocalizedString(key, comment: "")
 }
 

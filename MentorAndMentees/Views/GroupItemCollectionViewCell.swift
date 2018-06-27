@@ -18,14 +18,14 @@ class GroupItemCollectionViewCell: UICollectionViewCell {
   @IBOutlet weak var lastActivityLabel: UILabel!
   @IBOutlet weak var moreButton: UIButton!
   
-  private struct MenuControllerOptions {
-    static let deleteGroup: Selector      = "deleteGroup";
-    static let renameGroup: Selector      = "renameGroup";
-    static let moreInformations: Selector = "moreInformations";
+  fileprivate struct MenuControllerOptions {
+    static let deleteGroup: Selector      = #selector(GroupItemCollectionViewCell.deleteGroup);
+    static let renameGroup: Selector      = #selector(GroupItemCollectionViewCell.renameGroup);
+    static let moreInformations: Selector = #selector(GroupItemCollectionViewCell.moreInformations);
   }
   
   lazy var optionsMenuController: UIMenuController = {
-    let menu = UIMenuController.sharedMenuController()
+    let menu = UIMenuController.shared
     menu.menuItems = [UIMenuItem(title: Localizable("Delete"), action: MenuControllerOptions.deleteGroup),
                       UIMenuItem(title: Localizable("Rename"), action: MenuControllerOptions.renameGroup),
                       UIMenuItem(title: Localizable("More"), action: MenuControllerOptions.moreInformations)]
@@ -43,18 +43,18 @@ class GroupItemCollectionViewCell: UICollectionViewCell {
 
   // MARK: - User Interaction -
   
-  override func canPerformAction(action: Selector, withSender sender: AnyObject?) -> Bool {
+  override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
     return action == MenuControllerOptions.deleteGroup || action == MenuControllerOptions.renameGroup || action == MenuControllerOptions.moreInformations
   }
   
-  override func canBecomeFirstResponder() -> Bool {
+  override var canBecomeFirstResponder : Bool {
     return true
   }
   
-  @IBAction func showMenu(sender: AnyObject) {
+  @IBAction func showMenu(_ sender: AnyObject) {
     becomeFirstResponder()
     
-    optionsMenuController.setTargetRect(moreButton.frame, inView: self)
+    optionsMenuController.setTargetRect(moreButton.frame, in: self)
     optionsMenuController.setMenuVisible(true, animated: true)
   }
   

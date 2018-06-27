@@ -29,7 +29,7 @@ class SignupViewController:  BaseKeyboardNotificationViewController {
   
   @IBOutlet weak var nextButton: MentorButton! {
     didSet {
-      nextButton.setTitle(Localizable("Next"), forState: .Normal)
+      nextButton.setTitle(Localizable("Next"), for: UIControlState())
     }
   }
   
@@ -63,13 +63,13 @@ class SignupViewController:  BaseKeyboardNotificationViewController {
   
   // MARK: - Lifecycle -
   
-  override func viewWillAppear(animated: Bool) {
+  override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     fullNameSpringTextField.becomeFirstResponder()
   }
   
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if let signupEmailController = segue.destinationViewController as? SignupEmailViewController {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let signupEmailController = segue.destination as? SignupEmailViewController {
       signupEmailController.fullName = fullNameSpringTextField.text!
       signupEmailController.profilePicture = profilePicture
     }
@@ -77,39 +77,39 @@ class SignupViewController:  BaseKeyboardNotificationViewController {
   
   // MARK: - User Interaction -
   
-  @IBAction func showImagePicker(sender: AnyObject) {
-    presentViewController(imagePickerController, animated: true, completion: nil)
+  @IBAction func showImagePicker(_ sender: AnyObject) {
+    present(imagePickerController, animated: true, completion: nil)
   }
 }
 
 // MARK: - UIImagePickerController Delegate -
 
 extension SignupViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-  func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-    picker.dismissViewControllerAnimated(true) {
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+    picker.dismiss(animated: true) {
       self.profilePictureImage.image = image
       self.profilePicture = image
     }
   }
   
-  func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-    picker.dismissViewControllerAnimated(true, completion: nil)
+  func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+    picker.dismiss(animated: true, completion: nil)
   }
 }
 
 // MARK: - UITextField Delegate -
 
 extension SignupViewController: UITextFieldDelegate {
-  func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+  func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
     
-    let completeName = (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString: string)
+    let completeName = (textField.text! as NSString).replacingCharacters(in: range, with: string)
     nextButton.enabled = completeName.length < 2 ? false : true
     
     return true
   }
   
-  func textFieldShouldClear(textField: UITextField) -> Bool {
-    nextButton.enabled = false
+  func textFieldShouldClear(_ textField: UITextField) -> Bool {
+    nextButton.isEnabled = false
     return true
   }
 }
@@ -118,8 +118,8 @@ extension SignupViewController: UITextFieldDelegate {
 // MARK: - UIKeyboard Notification -
 
 extension SignupViewController {
-  func keyboardWillShow(notification: NSNotification) {
-    let keyboardEndFrame                     = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+  func keyboardWillShow(_ notification: Notification) {
+    let keyboardEndFrame                     = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
     let constantBottom: CGFloat              = keyboardEndFrame.height + ButtonProperties.margin
     self.nextButtonBottomConstraint.constant = constantBottom
   }

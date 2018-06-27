@@ -11,10 +11,10 @@ import RxSwift
 import Moya
 import Alamofire
 
-private func JSONResponseDataFormatter(data: NSData) -> NSData {
+private func JSONResponseDataFormatter(_ data: Data) -> Data {
     do {
-        let dataAsJSON = try NSJSONSerialization.JSONObjectWithData(data, options: [])
-        let prettyData =  try NSJSONSerialization.dataWithJSONObject(dataAsJSON, options: .PrettyPrinted)
+        let dataAsJSON = try JSONSerialization.jsonObject(with: data, options: [])
+        let prettyData =  try JSONSerialization.data(withJSONObject: dataAsJSON, options: .prettyPrinted)
         return prettyData
     } catch {
         return data //fallback to original data if it cant be serialized
@@ -26,7 +26,7 @@ var endpointClosure = { (target: MeheAPI) -> Endpoint<MeheAPI> in
     
     
     switch target {
-    case .XAuth(let cred):
+    case .xAuth(let cred):
         return endpoint.endpointByAddingHTTPHeaderFields(["Authorization": "\(cred)"])
     default:
         print("Nothing")
@@ -39,52 +39,52 @@ let MeheProvider = RxMoyaProvider<MeheAPI>(endpointClosure: endpointClosure, plu
 
 enum MeheAPI {
     // MARK: User
-    case XAuth(credentials: NSData)
-    case AuthWithNumber(number: String)
-    case SignupWithNumber(name: String, email: String, number: String, photo: NSData?)
-    case UpdateMe(name: String, email: String, token: String)
+    case xAuth(credentials: Data)
+    case authWithNumber(number: String)
+    case signupWithNumber(name: String, email: String, number: String, photo: Data?)
+    case updateMe(name: String, email: String, token: String)
     
     // MARK: Groups
-    case GroupList(token: String)
-    case GroupJoin(groupID: String, token: String)
-    case GroupFeed(groupID: String, token: String)
+    case groupList(token: String)
+    case groupJoin(groupID: String, token: String)
+    case groupFeed(groupID: String, token: String)
 }
 
 extension MeheAPI: TargetType {
     
-    var baseURL: NSURL {
-        return NSURL(string: "https://api.mehe.io")!
+    var baseURL: URL {
+        return URL(string: "https://api.mehe.io")!
     }
     
     var path: String {
         switch self {
-        case .XAuth(_):
+        case .xAuth(_):
             return "api/v1/auth/check_credentials"
-        case .AuthWithNumber:
+        case .authWithNumber:
             return "/api/v1/auth/signin"
-        case .SignupWithNumber:
+        case .signupWithNumber:
             return "/api/v1/auth/signup"
-        case .UpdateMe:
+        case .updateMe:
             return "/api/v1/user/update"
             
-        case .GroupList:
+        case .groupList:
             return "/api/v1/groups/list"
-        case .GroupJoin:
+        case .groupJoin:
             return "/api/v1/groups/join"
-        case .GroupFeed(let groupID, _):
+        case .groupFeed(let groupID, _):
             return "api/v1/groups/feed/\(groupID)"
         }
     }
     
     var parameters: [String: AnyObject]? {
         switch self {
-        case .XAuth(let cred):
-            return ["data": cred]
-        case .AuthWithNumber(let number):
-            return ["type": "phone",
-                "number": number
+        case .xAuth(let cred):
+            return ["data": cred as AnyObject]
+        case .authWithNumber(let number):
+            return ["type": "phone" as AnyObject,
+                "number": number as AnyObject
             ]
-        case .SignupWithNumber(let number, let name, let email, _):
+        case .signupWithNumber(let number, let name, let email, _):
             
             let data = ["type": "phone",
                 "number": number,
@@ -96,20 +96,20 @@ extension MeheAPI: TargetType {
                 data["photo"] = profilePic
             }
             */
-            return data
-        case .UpdateMe(let name, let email, let token):
-            return ["name": name,
-            "email": email,
-            "token": token
+            return data as [String : AnyObject]
+        case .updateMe(let name, let email, let token):
+            return ["name": name as AnyObject,
+            "email": email as AnyObject,
+            "token": token as AnyObject
             ]
             
-        case .GroupFeed(_, let token):
-            return ["token": token]
-        case .GroupList(let token):
-            return ["token": token]
-        case .GroupJoin(let groupID, let token):
-            return ["groupID": groupID,
-                "token": token
+        case .groupFeed(_, let token):
+            return ["token": token as AnyObject]
+        case .groupList(let token):
+            return ["token": token as AnyObject]
+        case .groupJoin(let groupID, let token):
+            return ["groupID": groupID as AnyObject,
+                "token": token as AnyObject
             ]
         }
     }
@@ -121,20 +121,20 @@ extension MeheAPI: TargetType {
         }
     }
     
-    var sampleData: NSData {
+    var sampleData: Data {
         switch self {
         default:
-            return NSData()
+            return Data()
         }
     }
 }
 
 private extension String {
     var URLEscapedString: String {
-        return self.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())!
+        return self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlHostAllowed)!
     }
 }
 
-func url(route: TargetType) -> String {
+func url(_ route: TargetType) -> String {
     return route.baseURL.URLByAppendingPathComponent(route.path).absoluteString
 }

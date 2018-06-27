@@ -51,12 +51,12 @@ class GroupsViewController: BaseViewController {
 // MARK: - UISearchBar Delegate -
 
 extension GroupsViewController: UISearchBarDelegate {
-  func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool {
+  func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
     searchBar.setShowsCancelButton(true, animated: true)
     return true
   }
   
-  func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+  func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
     searchBar.resignFirstResponder()
     searchBar.setShowsCancelButton(false, animated: true)
   }
@@ -67,23 +67,23 @@ extension GroupsViewController: UISearchBarDelegate {
 
 extension GroupsViewController: UICollectionViewDataSource {
   
-  func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+  func numberOfSections(in collectionView: UICollectionView) -> Int {
     return 1
   }
   
-  func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return 8
   }
   
-  private struct CollectionView {
+  fileprivate struct CollectionView {
     static let identifier                 = "GroupItem"
     static let itemHeight: CGFloat        = 180.0
     static let marginBetweenItem: CGFloat = 10.0
   }
   
-  func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-    let groupCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(CollectionView.identifier,
-      forIndexPath: indexPath) as! GroupItemCollectionViewCell
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let groupCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionView.identifier,
+      for: indexPath) as! GroupItemCollectionViewCell
     return groupCollectionViewCell
   }
 }
@@ -91,11 +91,11 @@ extension GroupsViewController: UICollectionViewDataSource {
 // MARK: - UICollectionView Layout Delegate -
 
 extension GroupsViewController: UICollectionViewDelegateFlowLayout {
-  func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     return CGSize(width: groupsCollectionView!.bounds.width/2.2, height: CollectionView.itemHeight)
   }
   
-  func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
     return UIEdgeInsets(top: CollectionView.marginBetweenItem, left: CollectionView.marginBetweenItem, bottom: CollectionView.marginBetweenItem, right: CollectionView.marginBetweenItem)
   }
 }

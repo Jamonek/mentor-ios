@@ -12,11 +12,11 @@ struct PersistencyManager {
   
   // MARK: - User Session -
   
-  static func saveSession(email email: String) {
-    NSUserDefaults.standardUserDefaults().setObject(email, forKey: "email")
+  static func saveSession(email: String) {
+    UserDefaults.standard.set(email, forKey: "email")
   }
   
   static func clearSession() {
-    NSUserDefaults.standardUserDefaults().removeObjectForKey("email")
+    UserDefaults.standard.removeObject(forKey: "email")
   }
 }

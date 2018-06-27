@@ -23,14 +23,14 @@ class LoginViewController: BaseViewController {
   
   @IBOutlet weak var signupButton: MentorButton! {
     didSet {
-      signupButton.setTitle(Localizable("Sign up"), forState: .Normal)
+      signupButton.setTitle(Localizable("Sign up"), for: UIControlState())
       signupButton.layer.cornerRadius = 6.0
     }
   }
   
   @IBOutlet weak var loginButton: MentorButton! {
     didSet {
-      loginButton.setTitle(Localizable("Log in with my phone number"), forState: .Normal)
+      loginButton.setTitle(Localizable("Log in with my phone number"), for: UIControlState())
       loginButton.layer.cornerRadius = 6.0
     }
   }
@@ -38,9 +38,9 @@ class LoginViewController: BaseViewController {
   @IBOutlet weak var loginWithPhoneNumberButton: UIButton! {
     didSet {
       // to underline the button
-      let attributes                                 = [NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue]
+      let attributes                                 = [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue]
       let attributedText                             = NSAttributedString(string: Localizable("Log in with my phone number"), attributes: attributes)
-      loginWithPhoneNumberButton.setAttributedTitle(attributedText, forState: .Normal)
+      loginWithPhoneNumberButton.setAttributedTitle(attributedText, for: UIControlState())
     }
   }
   
@@ -54,7 +54,7 @@ class LoginViewController: BaseViewController {
   
   // MARK: - User interaction -
 
-  @IBAction func loginWithDigits(sender: AnyObject) {
+  @IBAction func loginWithDigits(_ sender: AnyObject) {
     DigitsManager.loginWithTitle(Localizable("Mehe - Login")) { (session, error) in
       guard error == nil else { return }
       
@@ -65,13 +65,13 @@ class LoginViewController: BaseViewController {
       
       if isPhoneNumberRegistered {
         // TODO: - Fetch the user email from the dabatase and persist it
-        AWLoader.show(blurStyle: .Dark)
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * NSEC_PER_SEC)), dispatch_get_main_queue()) {
+        AWLoader.show(blurStyle: .dark)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(2 * NSEC_PER_SEC)) / Double(NSEC_PER_SEC)) {
           AWLoader.hide()
-          self.performSegueWithIdentifier("showGroupsViewController", sender: self)
+          self.performSegue(withIdentifier: "showGroupsViewController", sender: self)
         }
       } else {
-        self.performSegueWithIdentifier("showSignupView", sender: self)
+        self.performSegue(withIdentifier: "showSignupView", sender: self)
       }
 
     }

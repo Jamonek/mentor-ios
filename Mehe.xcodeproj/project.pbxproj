@@ -424,6 +424,7 @@
 					A572585A1C49789C0020B168 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = W29D5BE398;
+						LastSwiftMigration = 0830;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -432,10 +433,12 @@
 					};
 					A572586E1C49789C0020B168 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0830;
 						TestTargetID = A572585A1C49789C0020B168;
 					};
 					A57258791C49789C0020B168 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0830;
 						TestTargetID = A572585A1C49789C0020B168;
 					};
 				};
@@ -770,6 +773,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.mehe.meheapp;
 				PRODUCT_NAME = Mehe;
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -789,6 +793,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.mehe.meheapp;
 				PRODUCT_NAME = Mehe;
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -800,6 +805,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mentorandmentees.MentorAndMenteesTests;
 				PRODUCT_NAME = Mehe;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mehe.app/Mehe";
 			};
 			name = Debug;
@@ -812,6 +818,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mentorandmentees.MentorAndMenteesTests;
 				PRODUCT_NAME = Mehe;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mehe.app/Mehe";
 			};
 			name = Release;
@@ -823,6 +830,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mentorandmentees.MentorAndMenteesUITests;
 				PRODUCT_NAME = Mehe;
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = MentorAndMentees;
 				USES_XCTRUNNER = YES;
 			};
@@ -835,6 +843,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mentorandmentees.MentorAndMenteesUITests;
 				PRODUCT_NAME = Mehe;
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = MentorAndMentees;
 				USES_XCTRUNNER = YES;
 			};

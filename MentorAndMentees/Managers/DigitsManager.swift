@@ -11,21 +11,21 @@ import DigitsKit
 
 struct DigitsManager {
 
-  static func loginWithTitle(title: String, phoneNumber: String = "", completionHandler: DGTAuthenticationCompletion) {
+  static func loginWithTitle(_ title: String, phoneNumber: String = "", completionHandler: @escaping DGTAuthenticationCompletion) {
     let digits                 = Digits.sharedInstance()
-    let configuration          = DGTAuthenticationConfiguration(accountFields: .None)
+    let configuration          = DGTAuthenticationConfiguration(accountFields: .none)
     let appearance             = DGTAppearance()
     appearance.accentColor     = UIColor.mentorSkyBlueColor()
     appearance.backgroundColor = UIColor.mentorGreyBackgroundColor()
     appearance.logoImage       = UIImage(named: "iconApp")
-    configuration.appearance   = appearance
-    configuration.title        = title
+    configuration?.appearance   = appearance
+    configuration?.title        = title
     
     if phoneNumber.isNotEmpty {
-    configuration.phoneNumber  = "+33623185407"
+    configuration?.phoneNumber  = "+33623185407"
     }
 
-    digits.authenticateWithViewController(nil, configuration: configuration) { (session, error)  in
+    digits.authenticate(with: nil, configuration: configuration!) { (session, error)  in
       completionHandler(session, error)
     }
   }

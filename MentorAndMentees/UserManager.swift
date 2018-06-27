@@ -10,16 +10,16 @@ import RxSwift
 import Moya
  
 enum AuthState {
-   case Success
-    case Error(String)
-    case None
+   case success
+    case error(String)
+    case none
 }
  
 struct UserManager {
     
     let userStatus = Variable(AuthState.None)
     
-    static func credCheck(credentials: [NSObject: AnyObject]) -> Observable<AuthState?> {
+    static func credCheck(_ credentials: [AnyHashable: Any]) -> Observable<AuthState?> {
         let jsonData = try! NSJSONSerialization.dataWithJSONObject(credentials, options: NSJSONWritingOptions.PrettyPrinted)
         return Observable.create { observe in
             MeheProvider.request(.XAuth(credentials: jsonData)).subscribe { (event) -> Void in
@@ -36,7 +36,7 @@ struct UserManager {
         }
     }
     
-    static func login(number: String) -> Observable<AuthState> {
+    static func login(_ number: String) -> Observable<AuthState> {
         return Observable.create { observe in
             MeheProvider.request(MeheAPI.AuthWithNumber(number: number)).subscribe { event -> Void in
                 
@@ -52,7 +52,7 @@ struct UserManager {
         }
     }
     
-    static func signup(name: String, email: String, number: String, photo: UIImage? = nil) -> Observable<AuthState> {
+    static func signup(_ name: String, email: String, number: String, photo: UIImage? = nil) -> Observable<AuthState> {
         return Observable.create { observe in
             
             MeheProvider.request(MeheAPI.SignupWithNumber(name: name, email: email, number: number, photo: nil)).subscribe { event -> Void in

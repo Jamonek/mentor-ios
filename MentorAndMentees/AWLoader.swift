@@ -18,12 +18,12 @@ private extension UIWindow {
   }
   
   static var currentWindow: UIWindow {
-    return (UIApplication.sharedApplication().delegate! as! AppDelegate).window!
+    return (UIApplication.shared.delegate! as! AppDelegate).window!
   }
 }
 
 enum AWLoaderShape {
-  case Square, Circle
+  case square, circle
 }
 
 private struct AWLoaderProperties {
@@ -33,17 +33,17 @@ private struct AWLoaderProperties {
   static let lineColor             = UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 1.0)
   static let lineWidth: CGFloat    = 1.3
   
-  static func shapeCornierRadius(shape: AWLoaderShape = .Square) -> CGFloat {
+  static func shapeCornierRadius(_ shape: AWLoaderShape = .square) -> CGFloat {
     switch shape {
-    case .Square: return shapeViewSize.height / 10
-    case .Circle: return shapeViewSize.height / 2
+    case .square: return shapeViewSize.height / 10
+    case .circle: return shapeViewSize.height / 2
     }
   }
 }
 
 class AWLoaderView: UIView {
   
-  private static let sharedInstance = AWLoader()
+  fileprivate static let sharedInstance = AWLoader()
   var shapeView: UIView
   var containerShapeView: UIView
   var circleLayer: CAShapeLayer
@@ -59,11 +59,11 @@ class AWLoaderView: UIView {
       y: UIWindow.currentWindow.height/2-AWLoaderProperties.shapeViewSize.height/2), size: AWLoaderProperties.shapeViewSize))
     shapeView.backgroundColor          = AWLoaderProperties.squareBackgroundColor
     shapeView.layer.cornerRadius       = AWLoaderProperties.shapeCornierRadius()
-    containerShapeView.backgroundColor = UIColor.clearColor()
+    containerShapeView.backgroundColor = UIColor.clear
     
     shapeView.addSubview(containerShapeView)
     
-    visualEffectView       = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
+    visualEffectView       = UIVisualEffectView(effect: UIBlurEffect(style: .light))
     visualEffectView.frame = UIWindow.currentWindow.bounds
     
     visualEffectView.addSubview(shapeView)
@@ -77,13 +77,13 @@ class AWLoaderView: UIView {
     
     circleLayer.lineWidth   = AWLoaderProperties.lineWidth
     circleLayer.fillColor   = nil
-    circleLayer.strokeColor = AWLoaderProperties.lineColor.CGColor
+    circleLayer.strokeColor = AWLoaderProperties.lineColor.cgColor
     circleLayer.strokeStart = 0.0
     circleLayer.strokeEnd   = 0.87
     
     let path         = UIBezierPath(arcCenter: center, radius: radius,
       startAngle: startAngle, endAngle: endAngle, clockwise: true)
-    circleLayer.path = path.CGPath
+    circleLayer.path = path.cgPath
     containerShapeView.layer.addSublayer(circleLayer)
     
     super.init(frame: frame)
@@ -103,7 +103,7 @@ class AWLoaderView: UIView {
       fatalError("init(coder:) has not been implemented")
   }
   
-  func setShape(shape: AWLoaderShape) {
+  func setShape(_ shape: AWLoaderShape) {
     shapeView.layer.cornerRadius = AWLoaderProperties.shapeCornierRadius(shape)
   }
   
@@ -113,8 +113,8 @@ class AWLoaderView: UIView {
     UIWindow.currentWindow.addSubview(AWLoader.sharedInstance)
 
     func recursiveAnimate() {
-      UIView.animateWithDuration(0.4, delay: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: {
-        self.containerShapeView.transform = CGAffineTransformRotate(self.containerShapeView.transform, CGFloat(M_PI_2));
+      UIView.animate(withDuration: 0.4, delay: 0.0, options: UIViewAnimationOptions.curveLinear, animations: {
+        self.containerShapeView.transform = self.containerShapeView.transform.rotated(by: CGFloat(M_PI_2));
         }, completion: {
           if $0 {
             recursiveAnimate()
@@ -134,7 +134,7 @@ struct AWLoader {
   
   // MARK: - API Facade  -
   
-  static func show(blurStyle style: UIBlurEffectStyle = .Light, shape: AWLoaderShape = .Square) {
+  static func show(blurStyle style: UIBlurEffectStyle = .light, shape: AWLoaderShape = .square) {
     AWLoader.sharedInstance.visualEffectView.effect      = UIBlurEffect(style: style)
     AWLoader.sharedInstance.setShape(shape)
     AWLoader.sharedInstance.animate()
